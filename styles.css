@@ -711,11 +711,11 @@ h2 {
 }
 
 .portfolio-card.card-lovana .card-bg {
-  --card-image: url("./media/lovana.png");
+  --card-image: url("/media/lovana.png");
 }
 
 .portfolio-card.card-teamvote .card-bg {
-  --card-image: url("./media/teamvote.png");
+  --card-image: url("/media/teamvote.png");
 }
 
 .portfolio-card .card-content {
@@ -893,7 +893,7 @@ h2 {
   content: "";
   position: absolute;
   inset: 0; /* skrót dla top, right, bottom, left = 0 */
-  background-image: url("./media/jan.png");
+  background-image: url("/media/jan.png");
   background-size: cover;
   background-position: top;
   opacity: 0.3; /* tutaj kontrolujesz przezroczystość */
