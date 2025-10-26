@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeFlow Studio — AI-Native Web Experiences</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="constellation"></canvas>
+    <div class="page">
+      <header class="site-header">
+        <a class="logo" href="#hero">
+          <span>CodeFlow</span>
+          <span class="accent">Studio</span>
+        </a>
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          aria-label="Toggle navigation"
+        >
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+        </button>
+        <div class="nav-wrapper" id="site-navigation">
+          <nav class="nav">
+            <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+            <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+            <a href="#process" data-i18n="nav.process">Process</a>
+            <a href="#about" data-i18n="nav.about">About</a>
+            <a href="#contact" data-i18n="nav.contact">Contact</a>
+          </nav>
+          <div class="lang-switch">
+            <button class="lang-button is-active" data-lang="en">EN</button>
+            <button class="lang-button" data-lang="de">DE</button>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section id="hero" class="hero section">
+          <div class="hero-content">
+            <p class="eyebrow" data-i18n="hero.eyebrow">
+              AI-native digital experiences
+            </p>
+            <h1 data-i18n="hero.title">
+              Launch a breathtaking website faster than ever.
+            </h1>
+            <p class="lead" data-i18n="hero.lead">
+              CodeFlow Studio crafts ultra-modern web experiences that convert.
+              Collaborate with me for a polished one-off build or an ongoing AI
+              fueled iteration loop.
+            </p>
+            <div class="hero-cta">
+              <a class="button primary" href="#contact" data-i18n="hero.ctaPrimary">
+                Start your project
+              </a>
+              <a class="button ghost" href="#portfolio" data-i18n="hero.ctaSecondary">
+                View my work
+              </a>
+            </div>
+            <div class="pricing-pills">
+              <div class="pill" data-i18n="hero.offerOne">
+                Launch-ready site from 499 CHF
+              </div>
+              <div class="pill" data-i18n="hero.offerTwo">
+                Subscription from 49 CHF/month
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="orbital-scene">
+              <div class="halo halo-outer"></div>
+              <div class="halo halo-inner"></div>
+              <div class="core-code">
+                <span class="core-tag">AI Coding</span>
+                <span class="core-tag">Is our future!</span>
+              </div>
+
+              <div class="orbit orbit-one">
+                <div class="orbit-track">
+                  <div class="orbit-ring"></div>
+                  <div class="planet planet-primary">
+                    <div class="code-window code-window-1">
+                      <span class="code-line">const idea = ignite("vision");</span>
+                      <span class="code-line">const ui = synthesize(idea);</span>
+                      <span class="code-line">deploy(ui, { ai: true });</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="orbit orbit-two">
+                <div class="orbit-track">
+                  <div class="orbit-ring"></div>
+                  <div class="planet planet-secondary">
+                    <div class="code-window code-window-2">
+                      <span class="code-line">async function iterate(flow) {</span>
+                      <span class="code-line">  await refine(flow);</span>
+                      <span class="code-line">  return launch(flow);</span>
+                      <span class="code-line">}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="orbit orbit-three">
+                <div class="orbit-track">
+                  <div class="orbit-ring"></div>
+                  <div class="planet planet-tertiary">
+                    <div class="code-window code-window-3">
+                      <span class="code-line">const metrics = track(["UX", "AI"]);</span>
+                      <span class="code-line">ship(metrics.merge("delight"));</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="portfolio" class="section portfolio">
+          <div class="section-header">
+            <p class="eyebrow" data-i18n="portfolio.eyebrow">Selected work</p>
+            <h2 data-i18n="portfolio.title">
+              Recent AI-assisted product launches.
+            </h2>
+          </div>
+          <div class="portfolio-grid">
+            <a class="portfolio-card card-lovana" href="https://lovana.app" target="_blank" rel="noreferrer">
+              <div class="card-bg"></div>
+              <div class="card-content">
+                <h1>Lovana.app</h1>
+                
+                <p data-i18n="portfolio.lovana">
+                  Dating assistant app driven by AI designed to improve your dating experiences. 
+                </p>
+                <span class="card-tag" data-i18n="portfolio.caseStudy">Case study</span>
+              </div>
+            </a>
+            <a class="portfolio-card card-teamvote" href="https://teamvote.io" target="_blank" rel="noreferrer">
+              <div class="card-bg"></div>
+              <div class="card-content">
+                <h1>TeamVote.io</h1>
+                <p data-i18n="portfolio.teamvote">
+                  Real-time decision platform for distributed teams featuring
+                  adaptive AI-driven insights.
+                </p>
+                <span class="card-tag" data-i18n="portfolio.caseStudy">Case study</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <section id="pricing" class="section pricing">
+          <div class="section-header">
+            <p class="eyebrow" data-i18n="pricing.eyebrow">Transparent pricing</p>
+            <h2 data-i18n="pricing.title">
+              Choose a launch or a living, breathing product relationship.
+            </h2>
+          </div>
+          <div class="pricing-grid">
+            <div class="pricing-card">
+              <div class="pricing-badge" data-i18n="pricing.projectBadge">
+                Project Launch
+              </div>
+              <h3 data-i18n="pricing.projectTitle">One-time build</h3>
+              <p class="price" data-i18n="pricing.projectPrice">
+                499 CHF · fixed
+              </p>
+              <ul class="feature-list">
+                <li data-i18n="pricing.projectFeatures.0">
+                  Tailored concept, UX, and UI crafted with AI co-pilots
+                </li>
+                <li data-i18n="pricing.projectFeatures.1">
+                  Responsive, high-performing site ready to deploy within days
+                </li>
+                <li data-i18n="pricing.projectFeatures.2">
+                  Analytics, SEO foundation, and accessibility baked in
+                </li>
+              </ul>
+              <a class="button primary" href="#contact" data-i18n="pricing.projectCTA">
+                Reserve your slot
+              </a>
+            </div>
+            <div class="pricing-card highlighted">
+              <div class="pricing-badge" data-i18n="pricing.subscriptionBadge">
+                Continuous Evolution
+              </div>
+              <h3 data-i18n="pricing.subscriptionTitle">Subscription</h3>
+              <p class="price" data-i18n="pricing.subscriptionPrice">
+                49 CHF · monthly
+              </p>
+              <ul class="feature-list">
+                <li data-i18n="pricing.subscriptionFeatures.0">
+                  Unlimited iterative updates and experiments
+                </li>
+                <li data-i18n="pricing.subscriptionFeatures.1">
+                  AI-driven content generation and conversion optimization
+                </li>
+                <li data-i18n="pricing.subscriptionFeatures.2">
+                  Priority support, hosting guidance, and performance checks
+                </li>
+              </ul>
+              <a class="button ghost" href="#contact" data-i18n="pricing.subscriptionCTA">
+                Join the waitlist
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="process" class="section process">
+          <div class="section-header">
+            <p class="eyebrow" data-i18n="process.eyebrow">How it works</p>
+            <h2 data-i18n="process.title">From spark to shipping in three moves.</h2>
+          </div>
+          <div class="timeline">
+            <div class="step-card" data-step="01">
+              <h3 data-i18n="process.steps.0.title">Discovery + Preview</h3>
+              <p data-i18n="process.steps.0.copy">
+                Share your goals and aesthetic. Receive a complimentary AI-backed
+                concept preview so you can feel the direction before committing.
+              </p>
+            </div>
+            <div class="step-card" data-step="02">
+              <h3 data-i18n="process.steps.1.title">Design + Build</h3>
+              <p data-i18n="process.steps.1.copy">
+                I orchestrate design systems, motion, and code in a modular
+                stack ready for launch. Expect updates within fast iterations.
+              </p>
+            </div>
+            <div class="step-card" data-step="03">
+              <h3 data-i18n="process.steps.2.title">Launch + Iterate</h3>
+              <p data-i18n="process.steps.2.copy">
+                Deploy with confidence and keep evolving. AI insights drive
+                improvements, and I stay on to iterate or hand over seamlessly.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="section about">
+          <div class="grid">
+            <div class="about-copy">
+              <p class="eyebrow" data-i18n="about.eyebrow">About me</p>
+              <h2 data-i18n="about.title">
+                Jan Rejnowicz — crafting human experiences with AI precision.
+              </h2>
+              <p data-i18n="about.copy.0">
+                I’m an AI-native developer and designer. CodeFlow Studio blends
+                state-of-the-art automation with meticulous human taste to ship
+                products that feel both futuristic and unmistakably personal.
+              </p>
+              <p data-i18n="about.copy.1">
+                I partner with founders, agencies, and teams that want to move
+                fast without sacrificing craft. Let’s co-create something that
+                feels alive.
+              </p>
+            </div>
+            <div class="about-stats">
+              <div class="stat-card">
+                <span class="stat-label" data-i18n="about.stats.0.label">
+                  Projects shipped
+                </span>
+                <span class="stat-value" data-i18n="about.stats.0.value">
+                  40+
+                </span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-label" data-i18n="about.stats.1.label">
+                  AI automations deployed
+                </span>
+                <span class="stat-value" data-i18n="about.stats.1.value">
+                  120+
+                </span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-label" data-i18n="about.stats.2.label">
+                  Avg. turnaround
+                </span>
+                <span class="stat-value" data-i18n="about.stats.2.value">
+                  7 days
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section contact">
+          <div class="contact-card">
+            <p class="eyebrow" data-i18n="contact.eyebrow">Let’s build</p>
+            <h2 data-i18n="contact.title">
+              Ready for a site that feels alive from the first scroll?
+            </h2>
+            <p data-i18n="contact.copy">
+              Send a message with your idea, target audience, and timeline. I’ll
+              respond within 24 hours with the free preview concept and next
+              steps.
+            </p>
+            <div class="contact-actions">
+              <a class="button primary" href="mailto:hello@codeflowstudio.com">
+                hello@codeflowstudio.com
+              </a>
+              <a class="button ghost" href="https://cal.com" target="_blank" rel="noreferrer" data-i18n="contact.calendar">
+                Book a discovery call
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p data-i18n="footer.copy">
+          © CodeFlow Studio. Built with passion and AI.
+        </p>
+        <div class="footer-links">
+          <a href="#hero" data-i18n="footer.backToTop">Back to top</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
