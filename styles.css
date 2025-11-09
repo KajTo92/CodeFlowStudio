@@ -1249,6 +1249,24 @@ h2 {
     border-right: 0;
   }
 
+  .orbit-one .planet {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .orbit-two .planet {
+    top: 88%;
+    left: 24%;
+    transform: translate(-50%, -50%);
+  }
+
+  .orbit-three .planet {
+    top: 88%;
+    left: 76%;
+    transform: translate(-50%, -50%);
+  }
+
   .hero-cta {
     width: 100%;
     flex-direction: column;
