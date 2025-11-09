@@ -1257,13 +1257,13 @@ h2 {
 
   .orbit-two .planet {
     top: 88%;
-    left: 24%;
+    left: 5%;
     transform: translate(-50%, -50%);
   }
 
   .orbit-three .planet {
     top: 88%;
-    left: 76%;
+    left: 100%;
     transform: translate(-50%, -50%);
   }
 
