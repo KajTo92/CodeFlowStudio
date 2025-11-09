@@ -1077,6 +1077,7 @@ h2 {
     order: -1;
     margin-bottom: 20px;
     transform: none;
+    min-height: 380px;
   }
 
   .nav-wrapper {
@@ -1140,6 +1141,35 @@ h2 {
   .page {
     gap: 90px;
   }
+
+  .orbital-scene {
+    width: min(360px, 80vw);
+    filter: drop-shadow(0 24px 50px rgba(12, 10, 24, 0.55));
+  }
+
+  .orbit {
+    --orbit-speed: 48s;
+  }
+
+  .orbit-two {
+    --orbit-size: 64%;
+    --orbit-speed: 38s;
+  }
+
+  .orbit-three {
+    --orbit-size: 48%;
+    --orbit-speed: 28s;
+  }
+
+  .planet {
+    box-shadow: 0 24px 38px rgba(8, 6, 18, 0.5);
+    padding: 16px;
+  }
+
+  .core-tag {
+    backdrop-filter: blur(6px);
+    box-shadow: 0 12px 22px rgba(5, 8, 16, 0.45);
+  }
 }
 
 @media (max-width: 720px) {
@@ -1186,11 +1216,12 @@ h2 {
   }
 
   .hero-visual {
-    min-height: 340px;
+    min-height: 320px;
   }
 
   .orbital-scene {
-    width: min(320px, 78vw);
+    width: min(300px, 80vw);
+    filter: drop-shadow(0 16px 30px rgba(12, 10, 24, 0.45));
   }
 
   .core-code {
@@ -1199,6 +1230,23 @@ h2 {
 
   .code-line {
     font-size: 0.58rem;
+  }
+
+  .hero-visual .halo,
+  .hero-visual .orbit-track,
+  .hero-visual .planet {
+    animation: none !important;
+  }
+
+  .hero-visual .planet::after,
+  .hero-visual .orbit-ring {
+    display: none;
+  }
+
+  .hero-visual .code-line {
+    animation: none !important;
+    width: auto;
+    border-right: 0;
   }
 
   .hero-cta {
