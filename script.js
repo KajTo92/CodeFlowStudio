@@ -62,7 +62,7 @@ const translations = {
       subscriptionPrice: "49 CHF · monthly",
       subscriptionFeatures: [
         "2 site updates per month",
-        "No hosting cost - just domain we are good to go!",
+        "No hosting cost - just domain and we are good to go!",
         "Priority support, hosting guidance, and performance checks",
       ],
       subscriptionCTA: "Join the waitlist",
