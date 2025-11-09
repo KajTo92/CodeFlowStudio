@@ -29,7 +29,7 @@ const translations = {
       items: [
         {
           title: "Info - Pages",
-          copy: "A beautifully designed home for your business with traffic analytics, lead forms, and fresh visual accents. Multilingual, optimized, and functional to raise your brand to the next level.",
+          copy: "A beautifully designed info page for your business with traffic analytics, lead forms, and fresh visual accents. Multilingual, optimized, and functional to raise your brand to the next level.",
         },
         {
           title: "AI-powered experiences",
