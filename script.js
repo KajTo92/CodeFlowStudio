@@ -18,20 +18,42 @@ const translations = {
     },
     portfolio: {
       eyebrow: "Selected work",
-      title: "Recent AI-assisted product launches.",
+      title: "Recent product launches.",
       lovana: "Dating assistant app driven by AI designed to improve your dating experiences. First messages generator, profile analyzer and many more ",
       teamvote: "Real-time voting beast for medium-large teams and companies. Live onscreen results simply by scanning a qr code from your phone",
       caseStudy: "Case study",
+    },
+    services: {
+      eyebrow: "What we build",
+      title: "Future-ready web experiences tailored to your goals.",
+      items: [
+        {
+          title: "Info - Pages",
+          copy: "A beautifully designed home for your business with traffic analytics, lead forms, and fresh visual accents. Multilingual, optimized, and functional to raise your brand to the next level.",
+        },
+        {
+          title: "AI-powered experiences",
+          copy: "More complex sites that plug into the newest large language model APIs to deliver mind-blowing workflows. The role of AI on the modern web has never been bigger—sky is the limit.",
+        },
+        {
+          title: "E-commerce",
+          copy: "Launch a modern online shop with us faster than ever, complete with streamlined catalog management and checkout flows.",
+        },
+        {
+          title: "Integrations",
+          copy: "We implement any integration you need—from Stripe/PayPal payments that let you earn through the site to advanced databases that keep it maximally capable.",
+        },
+      ],
     },
     pricing: {
       eyebrow: "Transparent pricing",
       title: "Choose a launch or a living, breathing product relationship.",
       projectBadge: "Project Launch",
       projectTitle: "One-time build",
-      projectPrice: "499 CHF · fixed",
+      projectPrice: "from 499 CHF",
       projectFeatures: [
-        "Tailored concept, UX, and UI crafted with AI co-pilots",
-        "Responsive, high-performing site ready to deploy within days",
+        "Tailored concept, UX, and UI crafted with best coding methods and tools",
+        "Responsive, high-performing site both on desktop and mobile,ready to deploy within days",
         "Analytics, SEO foundation, and accessibility baked in",
       ],
       projectCTA: "Reserve your slot",
@@ -39,8 +61,8 @@ const translations = {
       subscriptionTitle: "Subscription",
       subscriptionPrice: "49 CHF · monthly",
       subscriptionFeatures: [
-        "Unlimited iterative updates and experiments",
-        "AI-driven content generation and conversion optimization",
+        "2 site updates per month",
+        "No hosting cost - just domain we are good to go!",
         "Priority support, hosting guidance, and performance checks",
       ],
       subscriptionCTA: "Join the waitlist",
@@ -51,7 +73,7 @@ const translations = {
       steps: [
         {
           title: "Discovery + Preview",
-          copy: "Share your goals and aesthetic. Receive a complimentary AI-backed concept preview so you can feel the direction before committing.",
+          copy: "Share your goals and aesthetic. Receive a complimentary concept preview. You don't like the concept? We will start from scratch or you decide not to continue the jurney with us. It is no cost with us! ",
         },
         {
           title: "Design + Build",
@@ -110,6 +132,28 @@ const translations = {
       lovana: "Ein Wellness-Begleiter, der achtsame Rituale mit prädiktiver AI für persönliche Journeys verbindet.",
       teamvote: "Plattform für Entscheidungen in verteilten Teams mit adaptiven, AI-gestützten Insights.",
       caseStudy: "Case Study",
+    },
+    services: {
+      eyebrow: "Was wir bauen",
+      title: "Web-Erlebnisse, die dein Vorhaben nach vorn bringen.",
+      items: [
+        {
+          title: "Informationsseiten",
+          copy: "Ein wunderschön gestalteter Auftritt für dein Business mit Traffic-Analytics, Formularen und frischen visuellen Trends. Mehrsprachig, optimiert und funktional – hebt dein Unternehmen aufs nächste Level.",
+        },
+        {
+          title: "AI-basierte Experiences",
+          copy: "Komplexere Webauftritte, die die neuesten Integrationen zu beliebten Large-Language-Models nutzen. Dank intelligenter Automationen sind spektakuläre Workflows möglich – Grenzen gibt es praktisch keine.",
+        },
+        {
+          title: "Online-Shops",
+          copy: "Starte deinen modernen E-Commerce-Auftritt mit uns schneller als je zuvor – inklusive schlanker Katalog- und Checkout-Flows.",
+        },
+        {
+          title: "Integrationen",
+          copy: "Wir realisieren jede gewünschte Integration: Stripe/PayPal-Zahlungen, damit deine Seite Umsatz bringt, bis hin zu komplexen Datenbanken für maximale Funktionalität.",
+        },
+      ],
     },
     pricing: {
       eyebrow: "Transparente Preise",
@@ -177,6 +221,22 @@ const translations = {
   },
 };
 
+const getMediaQuery = (query) => {
+  if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
+    return null;
+  }
+  return window.matchMedia(query);
+};
+
+const subscribeToMediaQuery = (mediaQuery, handler) => {
+  if (!mediaQuery || typeof handler !== "function") return;
+  if (typeof mediaQuery.addEventListener === "function") {
+    mediaQuery.addEventListener("change", handler);
+  } else if (typeof mediaQuery.addListener === "function") {
+    mediaQuery.addListener(handler);
+  }
+};
+
 const setActiveLanguage = (lang) => {
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.dataset.i18n;
@@ -232,66 +292,116 @@ const initRevealObserver = () => {
 
 const initConstellation = () => {
   const canvas = document.getElementById("constellation");
-  if (!canvas) return;
+  if (!canvas) return null;
   const ctx = canvas.getContext("2d");
-  const particleCount = 80;
-  const particles = [];
+  if (!ctx) return null;
+
+  const config = {
+    minParticles: 18,
+    maxParticles: 48,
+    frameInterval: 1000 / 45,
+    linkDistance: 100,
+    pointerDistance: 140,
+    pointerInfluence: 120,
+  };
+
   const pointer = { x: 0, y: 0, active: false };
+  const pointerMediaQuery = getMediaQuery("(pointer: fine)");
+  let pointerEnabled = pointerMediaQuery ? pointerMediaQuery.matches : true;
+
+  const particles = [];
+  const dimensions = { width: window.innerWidth, height: window.innerHeight };
+  let animationFrameId = null;
+  let lastFrameTime = 0;
+  let reduceMotion = false;
+
+  const debounce = (fn, delay = 150) => {
+    let timeoutId;
+    return (...args) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => fn(...args), delay);
+    };
+  };
 
   const resize = () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    dimensions.width = window.innerWidth;
+    dimensions.height = window.innerHeight;
+    canvas.width = dimensions.width;
+    canvas.height = dimensions.height;
+  };
+
+  const particleTarget = () => {
+    const area = dimensions.width * dimensions.height;
+    const normalized = Math.round(area / 28000);
+    return Math.max(config.minParticles, Math.min(config.maxParticles, normalized));
   };
 
   const createParticle = () => ({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    vx: (Math.random() - 0.5) * 0.4,
-    vy: (Math.random() - 0.5) * 0.4,
-    radius: Math.random() * 1.8 + 0.6,
+    x: Math.random() * dimensions.width,
+    y: Math.random() * dimensions.height,
+    vx: (Math.random() - 0.5) * 0.25,
+    vy: (Math.random() - 0.5) * 0.25,
+    radius: Math.random() * 1.6 + 0.4,
   });
+
+  const syncParticles = () => {
+    const target = particleTarget();
+    if (particles.length < target) {
+      const deficit = target - particles.length;
+      for (let i = 0; i < deficit; i += 1) {
+        particles.push(createParticle());
+      }
+    } else if (particles.length > target) {
+      particles.splice(target);
+    }
+  };
 
   const updateParticles = () => {
     particles.forEach((p) => {
       p.x += p.vx;
       p.y += p.vy;
 
-      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+      if (p.x <= 0 || p.x >= dimensions.width) {
+        p.vx *= -1;
+      }
+      if (p.y <= 0 || p.y >= dimensions.height) {
+        p.vy *= -1;
+      }
 
       if (pointer.active) {
         const dx = p.x - pointer.x;
         const dy = p.y - pointer.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        const influence = 140;
-        if (dist < influence && dist > 0) {
-          const force = (influence - dist) / influence;
-          p.vx += (dx / dist) * force * 0.03;
-          p.vy += (dy / dist) * force * 0.03;
+        if (dist < config.pointerInfluence && dist > 0) {
+          const force = (config.pointerInfluence - dist) / config.pointerInfluence;
+          p.vx += (dx / dist) * force * 0.02;
+          p.vy += (dy / dist) * force * 0.02;
         }
       }
     });
   };
 
   const drawParticles = () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, dimensions.width, dimensions.height);
     particles.forEach((p) => {
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(140,255,215,0.55)";
+      ctx.fillStyle = "rgba(140,255,215,0.5)";
       ctx.fill();
     });
 
     for (let i = 0; i < particles.length; i += 1) {
+      const p1 = particles[i];
       for (let j = i + 1; j < particles.length; j += 1) {
-        const p1 = particles[i];
         const p2 = particles[j];
         const dx = p1.x - p2.x;
+        if (Math.abs(dx) > config.linkDistance) continue;
         const dy = p1.y - p2.y;
+        if (Math.abs(dy) > config.linkDistance) continue;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120) {
-          const opacity = 1 - dist / 120;
-          ctx.strokeStyle = `rgba(91,141,255,${opacity * 0.35})`;
+        if (dist < config.linkDistance) {
+          const opacity = 1 - dist / config.linkDistance;
+          ctx.strokeStyle = `rgba(91,141,255,${opacity * 0.3})`;
           ctx.lineWidth = 0.8;
           ctx.beginPath();
           ctx.moveTo(p1.x, p1.y);
@@ -301,15 +411,17 @@ const initConstellation = () => {
       }
     }
 
-    if (pointer.active) {
+    if (pointer.active && pointerEnabled) {
       particles.forEach((p) => {
         const dx = p.x - pointer.x;
+        if (Math.abs(dx) > config.pointerDistance) return;
         const dy = p.y - pointer.y;
+        if (Math.abs(dy) > config.pointerDistance) return;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 160) {
-          const opacity = 1 - dist / 160;
-          ctx.strokeStyle = `rgba(255,106,206,${opacity * 0.6})`;
-          ctx.lineWidth = 0.9;
+        if (dist < config.pointerDistance) {
+          const opacity = 1 - dist / config.pointerDistance;
+          ctx.strokeStyle = `rgba(255,106,206,${opacity * 0.5})`;
+          ctx.lineWidth = 0.8;
           ctx.beginPath();
           ctx.moveTo(pointer.x, pointer.y);
           ctx.lineTo(p.x, p.y);
@@ -319,27 +431,82 @@ const initConstellation = () => {
     }
   };
 
-  const loop = () => {
-    updateParticles();
-    drawParticles();
-    requestAnimationFrame(loop);
+  const loop = (timestamp = 0) => {
+    if (reduceMotion) return;
+    if (timestamp - lastFrameTime >= config.frameInterval) {
+      lastFrameTime = timestamp;
+      updateParticles();
+      drawParticles();
+    }
+    animationFrameId = requestAnimationFrame(loop);
+  };
+
+  const start = () => {
+    if (animationFrameId || reduceMotion) return;
+    lastFrameTime = 0;
+    animationFrameId = requestAnimationFrame(loop);
+  };
+
+  const stop = () => {
+    if (!animationFrameId) return;
+    cancelAnimationFrame(animationFrameId);
+    animationFrameId = null;
+  };
+
+  const setReducedMotion = (value) => {
+    reduceMotion = value;
+    if (reduceMotion) {
+      stop();
+      ctx.clearRect(0, 0, dimensions.width, dimensions.height);
+    } else {
+      start();
+    }
   };
 
   resize();
-  window.addEventListener("resize", resize);
-  window.addEventListener("mousemove", (event) => {
+  syncParticles();
+  start();
+
+  const handleResize = debounce(() => {
+    resize();
+    syncParticles();
+  }, 180);
+  window.addEventListener("resize", handleResize);
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stop();
+    } else if (!reduceMotion) {
+      start();
+    }
+  });
+
+  if (pointerMediaQuery) {
+    subscribeToMediaQuery(pointerMediaQuery, (event) => {
+      pointerEnabled = event.matches;
+      if (!pointerEnabled) {
+        pointer.active = false;
+      }
+    });
+  }
+
+  const handlePointerMove = (event) => {
+    if (!pointerEnabled) return;
     pointer.x = event.clientX;
     pointer.y = event.clientY;
     pointer.active = true;
-  });
-  window.addEventListener("mouseleave", () => {
-    pointer.active = false;
-  });
+  };
 
-  for (let i = 0; i < particleCount; i += 1) {
-    particles.push(createParticle());
-  }
-  loop();
+  const handlePointerLeave = () => {
+    pointer.active = false;
+  };
+
+  window.addEventListener("mousemove", handlePointerMove);
+  window.addEventListener("mouseleave", handlePointerLeave);
+
+  return {
+    setReducedMotion,
+  };
 };
 
 const initNavigationToggle = () => {
@@ -413,7 +580,17 @@ const init = () => {
   initLanguageSwitcher();
   initNavigationToggle();
   initRevealObserver();
-  initConstellation();
+  const constellation = initConstellation();
+
+  const motionPreference = getMediaQuery("(prefers-reduced-motion: reduce)");
+  const applyMotionPreference = (matches) => {
+    document.body.classList.toggle("reduced-motion", !!matches);
+    document.documentElement.classList.toggle("reduced-motion", !!matches);
+    constellation?.setReducedMotion(!!matches);
+  };
+
+  applyMotionPreference(motionPreference ? motionPreference.matches : false);
+  subscribeToMediaQuery(motionPreference, (event) => applyMotionPreference(event.matches));
 };
 
 document.addEventListener("DOMContentLoaded", init);
