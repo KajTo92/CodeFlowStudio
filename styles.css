@@ -1215,27 +1215,6 @@ h2 {
     padding: 28px;
   }
 
-  .portfolio-grid {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    padding: 4px 6px 12px;
-    margin: 0 -6px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .portfolio-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .portfolio-card {
-    flex: 0 0 85%;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
-
   .hero {
     gap: 36px;
   }
