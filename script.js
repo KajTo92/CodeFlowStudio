@@ -21,6 +21,7 @@ const translations = {
       title: "Recent product launches.",
       lovana: "Dating assistant app driven by AI designed to improve your dating experiences. First messages generator, profile analyzer and many more ",
       teamvote: "Real-time voting beast for medium-large teams and companies. Live onscreen results simply by scanning a qr code from your phone",
+      traislate: "Traislate.ai — Transcribe your meeting into any desired language in seconds; it is fully multilingual.",
       caseStudy: "Case study",
     },
     services: {
@@ -131,6 +132,7 @@ const translations = {
       title: "Aktuelle AI-unterstützte Produktlaunches.",
       lovana: "Ein Wellness-Begleiter, der achtsame Rituale mit prädiktiver AI für persönliche Journeys verbindet.",
       teamvote: "Plattform für Entscheidungen in verteilten Teams mit adaptiven, AI-gestützten Insights.",
+      traislate: "Traislate.ai — Transkribiere jedes Meeting blitzschnell in deine Wunsch-Sprache, echte Mehrsprachigkeit inklusive.",
       caseStudy: "Case Study",
     },
     services: {

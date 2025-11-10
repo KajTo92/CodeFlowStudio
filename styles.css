@@ -714,6 +714,10 @@ h2 {
   --card-image: url("Media/teamvote.png");
 }
 
+.portfolio-card.card-traislate .card-bg {
+  --card-image: url("Media/traislate.png");
+}
+
 .portfolio-card .card-content {
   position: relative;
   z-index: 1;
@@ -1209,6 +1213,27 @@ h2 {
   .step-card,
   .contact-card {
     padding: 28px;
+  }
+
+  .portfolio-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 4px 6px 12px;
+    margin: 0 -6px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .portfolio-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .portfolio-card {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 
   .hero {
