@@ -25,6 +25,8 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -36,15 +38,18 @@ body {
     var(--bg-primary);
   color: var(--text-primary);
   min-height: 100vh;
+  width: 100%;
   line-height: 1.5;
   overflow-x: hidden;
+  overscroll-behavior-x: contain;
+  touch-action: pan-y;
 }
 
 #constellation {
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 0;
   mix-blend-mode: screen;
@@ -55,10 +60,12 @@ body {
   position: relative;
   z-index: 1;
   min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 120px;
   padding: 36px 0 80px;
+  overflow-x: hidden;
 }
 
 .section {
@@ -1083,6 +1090,15 @@ h2 {
     transform: none;
     min-height: 380px;
   }
+  
+  .hero-visual::before {
+    left: 0;
+    right: 0;
+  }
+
+  .section::after {
+    inset: -60px 0;
+  }
 
   .nav-wrapper {
     position: fixed;
@@ -1223,6 +1239,10 @@ h2 {
     min-height: 320px;
   }
 
+  .hero-visual::before {
+    display: none;
+  }
+
   .orbital-scene {
     width: min(300px, 80vw);
     filter: drop-shadow(0 16px 30px rgba(12, 10, 24, 0.45));
@@ -1278,6 +1298,10 @@ h2 {
 
   .button {
     width: 100%;
+  }
+
+  .section::after {
+    inset: -40px 0;
   }
 }
 
