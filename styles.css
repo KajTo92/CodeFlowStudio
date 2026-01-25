@@ -1238,16 +1238,115 @@ h2 {
   }
 
   .nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 14px 12px;
+    align-items: stretch;
   }
 
   .nav a {
+    position: relative;
     width: 100%;
-    padding: 14px 0;
-    font-size: 1.05rem;
-    background: transparent;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 1.02rem;
+    border-radius: 18px;
+    border: 1px solid rgba(140, 255, 215, 0.2);
+    background:
+      radial-gradient(circle at 18% 24%, rgba(91, 141, 255, 0.18), transparent 55%),
+      radial-gradient(circle at 80% 70%, rgba(255, 106, 206, 0.16), transparent 55%),
+      rgba(255, 255, 255, 0.03);
+    box-shadow: 0 22px 38px rgba(5, 8, 16, 0.48);
+    color: var(--text-primary);
+    overflow: visible;
+    z-index: 0;
+    opacity: 0;
+    transform: translate(var(--drift, 0), var(--lift, 18px)) scale(0.94) rotate(var(--tilt, -3deg));
+    transition: opacity 0.32s var(--transition), transform 0.55s var(--transition), box-shadow 0.45s var(--transition), border-color 0.45s var(--transition), background 0.45s var(--transition);
+    will-change: transform, opacity;
+  }
+
+  .nav a::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(120deg, rgba(91, 141, 255, 0.22), rgba(255, 106, 206, 0.18));
+    filter: blur(18px);
+    opacity: 0;
+    transition: opacity 0.45s var(--transition), transform 0.45s var(--transition);
+    z-index: -1;
+  }
+
+  body.nav-open .nav a {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) rotate(var(--tilt-open, 0deg));
+    border-color: rgba(140, 255, 215, 0.45);
+    box-shadow: 0 28px 48px rgba(5, 8, 16, 0.58);
+  }
+
+  body.nav-open .nav a::after {
+    opacity: 0.85;
+    transform: translateY(-4px);
+  }
+
+  body.nav-open .nav a:hover {
+    background:
+      radial-gradient(circle at 22% 20%, rgba(140, 255, 215, 0.22), transparent 55%),
+      radial-gradient(circle at 78% 75%, rgba(255, 106, 206, 0.22), transparent 55%),
+      rgba(255, 255, 255, 0.06);
+    box-shadow: 0 32px 56px rgba(5, 8, 16, 0.6);
+    transform: translate(0, -6px) scale(1.03) rotate(var(--tilt-open, 0deg));
+  }
+
+  .nav a:nth-child(1) {
+    --drift: -8px;
+    --tilt: -5deg;
+    --tilt-open: -1.5deg;
+    --lift: 22px;
+    transition-delay: 0.04s;
+  }
+
+  .nav a:nth-child(2) {
+    --drift: 10px;
+    --tilt: 5deg;
+    --tilt-open: 1.5deg;
+    --lift: 18px;
+    transition-delay: 0.08s;
+  }
+
+  .nav a:nth-child(3) {
+    --drift: -6px;
+    --tilt: -3deg;
+    --tilt-open: -1deg;
+    --lift: 20px;
+    transition-delay: 0.12s;
+  }
+
+  .nav a:nth-child(4) {
+    --drift: 6px;
+    --tilt: 4deg;
+    --tilt-open: 1.25deg;
+    --lift: 16px;
+    transition-delay: 0.16s;
+  }
+
+  .nav a:nth-child(5) {
+    --drift: -4px;
+    --tilt: -2deg;
+    --tilt-open: -0.75deg;
+    --lift: 18px;
+    transition-delay: 0.2s;
+  }
+
+  .nav a:nth-child(6) {
+    --drift: 8px;
+    --tilt: 3deg;
+    --tilt-open: 1deg;
+    --lift: 20px;
+    transition-delay: 0.24s;
   }
 
   .nav-toggle {
@@ -1309,19 +1408,19 @@ h2 {
   }
 
   .nav {
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px 10px;
   }
 
   .nav a {
-    padding: 12px 0;
-    font-size: 1rem;
+    padding: 12px 14px;
+    font-size: 0.98rem;
   }
 
   .lang-switch {
-    width: 100%;
+    width: auto;
+    align-self: flex-start;
+    padding: 6px 8px;
   }
 
   .section {
