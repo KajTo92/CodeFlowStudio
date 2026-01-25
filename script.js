@@ -511,6 +511,148 @@ const initConstellation = () => {
   };
 };
 
+const initHeroExplosion = () => {
+  const canvas = document.getElementById("explosion-canvas");
+  const heroVisual = document.querySelector(".hero-visual");
+  if (!canvas || !heroVisual) return;
+
+  const storageKey = "heroExplosionPlayed";
+  let alreadyPlayed = false;
+  try {
+    alreadyPlayed = sessionStorage.getItem(storageKey) === "1";
+  } catch (error) {
+    alreadyPlayed = false;
+  }
+
+  const prefersReducedMotion =
+    document.body.classList.contains("reduced-motion") ||
+    document.documentElement.classList.contains("reduced-motion");
+
+  if (alreadyPlayed || prefersReducedMotion) {
+    try {
+      sessionStorage.setItem(storageKey, "1");
+    } catch (error) {
+      // ignore storage errors
+    }
+    return;
+  }
+
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  try {
+    sessionStorage.setItem(storageKey, "1");
+  } catch (error) {
+    // ignore storage errors
+  }
+
+  const palette = [
+    { r: 91, g: 141, b: 255 },
+    { r: 255, g: 106, b: 206 },
+    { r: 140, g: 255, b: 215 },
+    { r: 255, g: 198, b: 106 },
+  ];
+
+  const particles = [];
+  const duration = 5000;
+  const particleCount = 190;
+  let startTime = null;
+  let width = 0;
+  let height = 0;
+  let rafId = null;
+
+  const resize = () => {
+    const rect = heroVisual.getBoundingClientRect();
+    width = Math.max(1, Math.round(rect.width * 1.28));
+    height = Math.max(1, Math.round(rect.height * 1.28));
+    canvas.width = width;
+    canvas.height = height;
+  };
+
+  const resetParticle = (particle, seedAngle = Math.random() * Math.PI * 2) => {
+    const speed = Math.random() * 7 + 2.2;
+    particle.x = width / 2;
+    particle.y = height / 2;
+    particle.vx = Math.cos(seedAngle) * speed;
+    particle.vy = Math.sin(seedAngle) * speed;
+    particle.life = Math.random() * 0.5 + 0.85;
+    particle.decay = Math.random() * 0.008 + 0.0045;
+    particle.size = Math.random() * 3.6 + 1.1;
+    particle.color = palette[Math.floor(Math.random() * palette.length)];
+  };
+
+  for (let i = 0; i < particleCount; i += 1) {
+    const particle = {};
+    resetParticle(particle, (i / particleCount) * Math.PI * 2);
+    particle.life *= Math.random() * 0.8 + 0.2;
+    particles.push(particle);
+  }
+
+  const drawShockwave = (progress) => {
+    const maxRadius = Math.max(width, height) * 0.6;
+    const radius = maxRadius * Math.min(1, Math.pow(progress, 0.65));
+    const gradient = ctx.createRadialGradient(width / 2, height / 2, radius * 0.3, width / 2, height / 2, radius);
+    gradient.addColorStop(0, "rgba(255,255,255,0.4)");
+    gradient.addColorStop(0.45, "rgba(140,255,215,0.18)");
+    gradient.addColorStop(1, "rgba(255,255,255,0)");
+    ctx.save();
+    ctx.globalCompositeOperation = "screen";
+    ctx.beginPath();
+    ctx.fillStyle = gradient;
+    ctx.arc(width / 2, height / 2, radius, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  };
+
+  const animate = (timestamp = 0) => {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+    const progress = Math.min(1, elapsed / duration);
+
+    ctx.clearRect(0, 0, width, height);
+    drawShockwave(progress);
+    ctx.globalCompositeOperation = "lighter";
+
+    particles.forEach((p) => {
+      p.vx *= 0.992;
+      p.vy = p.vy * 0.992 + 0.03;
+      p.x += p.vx;
+      p.y += p.vy;
+      p.life -= p.decay;
+
+      if (p.life <= 0 && elapsed < duration * 0.75) {
+        resetParticle(p);
+      }
+
+      if (p.life > 0) {
+        const alpha = Math.min(1, Math.max(0, p.life));
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(${p.color.r},${p.color.g},${p.color.b},${alpha})`;
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    });
+
+    ctx.globalCompositeOperation = "source-over";
+
+    if (elapsed < duration) {
+      rafId = requestAnimationFrame(animate);
+    } else {
+      canvas.style.opacity = "0";
+      window.removeEventListener("resize", resize);
+      setTimeout(() => {
+        ctx.clearRect(0, 0, width, height);
+        if (rafId) cancelAnimationFrame(rafId);
+      }, 420);
+    }
+  };
+
+  resize();
+  canvas.style.opacity = "1";
+  rafId = requestAnimationFrame(animate);
+  window.addEventListener("resize", resize, { passive: true });
+};
+
 const initNavigationToggle = () => {
   const toggle = document.querySelector(".nav-toggle");
   const navWrapper = document.querySelector(".nav-wrapper");
@@ -592,6 +734,7 @@ const init = () => {
   };
 
   applyMotionPreference(motionPreference ? motionPreference.matches : false);
+  initHeroExplosion();
   subscribeToMediaQuery(motionPreference, (event) => applyMotionPreference(event.matches));
 };
 

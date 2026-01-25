@@ -350,6 +350,19 @@ h2 {
   transform: translateY(-36px);
 }
 
+.hero-explosion {
+  position: absolute;
+  inset: -18% -14%;
+  width: 128%;
+  height: 128%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0;
+  filter: blur(0.2px);
+  transition: opacity 0.6s var(--transition);
+  z-index: 0;
+}
+
 .hero-visual::before {
   content: "";
   position: absolute;
@@ -1199,10 +1212,16 @@ h2 {
     transform: none;
     min-height: 380px;
   }
-  
+
   .hero-visual::before {
     left: 0;
     right: 0;
+  }
+
+  .hero-explosion {
+    inset: -14% -10%;
+    width: 120%;
+    height: 120%;
   }
 
   .section::after {
@@ -1454,6 +1473,12 @@ h2 {
 
   .hero-visual::before {
     display: none;
+  }
+
+  .hero-explosion {
+    inset: -12% -8%;
+    width: 116%;
+    height: 116%;
   }
 
   .orbital-scene {
