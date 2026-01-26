@@ -48,7 +48,7 @@ const translations = {
     },
     pricing: {
       eyebrow: "Transparent pricing",
-      title: "Choose a launch or a living, breathing product relationship.",
+      title: "It doesn't have to cost a fortune",
       projectBadge: "Project Launch",
       projectTitle: "One-time build",
       projectPrice: "from 499 CHF",
