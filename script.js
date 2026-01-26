@@ -8,7 +8,7 @@ const translations = {
       contact: "Contact",
     },
     hero: {
-      eyebrow: "AI-native digital experiences",
+      eyebrow: "AI-native modern websites",
       title: "Launch a breathtaking website faster than ever..",
       lead: "Space Code Studio crafts ultra-modern web experiences that convert. Collaborate with me for a polished one-off build or an ongoing AI fueled iteration loop.",
       ctaPrimary: "Start your project",
