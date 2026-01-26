@@ -10,7 +10,7 @@ const translations = {
     hero: {
       eyebrow: "AI-native digital experiences",
       title: "Launch a breathtaking website faster than ever..",
-      lead: "CodeFlow Studio crafts ultra-modern web experiences that convert. Collaborate with me for a polished one-off build or an ongoing AI fueled iteration loop.",
+      lead: "Space Code Studio crafts ultra-modern web experiences that convert. Collaborate with me for a polished one-off build or an ongoing AI fueled iteration loop.",
       ctaPrimary: "Start your project",
       ctaSecondary: "View my work",
       offerOne: "Launch-ready site from 499 CHF",
@@ -90,7 +90,7 @@ const translations = {
       eyebrow: "About me",
       title: "Jan Rejnowicz — crafting human experiences with AI precision.",
       copy: [
-        "Jan'sites blends state-of-the-art automation with meticulous human taste to ship products that feel both futuristic and unmistakably personal.",
+        "Space Code Studio blends state-of-the-art automation with meticulous human taste to ship products that feel both futuristic and unmistakably personal.",
         "I partner with founders, agencies, and teams that want to move fast without sacrificing craft. Let’s co-create something that feels alive.",
       ],
       stats: [
