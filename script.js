@@ -14,7 +14,7 @@ const translations = {
       ctaPrimary: "Start your project",
       ctaSecondary: "View my work",
       offerOne: "Launch-ready site from 499 CHF",
-      offerTwo: "Subscription from 49 CHF/month",
+      offerTwo: "Subscription from 69 CHF/month",
     },
     portfolio: {
       eyebrow: "Selected work",
@@ -60,9 +60,9 @@ const translations = {
       projectCTA: "Reserve your slot",
       subscriptionBadge: "Continuous Evolution",
       subscriptionTitle: "Subscription",
-      subscriptionPrice: "49 CHF · monthly",
+      subscriptionPrice: "69 CHF · monthly",
       subscriptionFeatures: [
-        "2 site updates per month",
+        "When website needs an constant updates and improvements, we are here for you.",
         "No hosting cost - just domain and we are good to go!",
         "Priority support, hosting guidance, and performance checks",
       ],
@@ -90,7 +90,7 @@ const translations = {
       eyebrow: "About me",
       title: "Jan Rejnowicz — crafting human experiences with AI precision.",
       copy: [
-        "I’m an AI-native developer and designer. CodeFlow Studio blends state-of-the-art automation with meticulous human taste to ship products that feel both futuristic and unmistakably personal.",
+        "Jan'sites blends state-of-the-art automation with meticulous human taste to ship products that feel both futuristic and unmistakably personal.",
         "I partner with founders, agencies, and teams that want to move fast without sacrificing craft. Let’s co-create something that feels alive.",
       ],
       stats: [
@@ -591,7 +591,7 @@ const initHeroExplosion = () => {
   const drawShockwave = (progress) => {
     const maxRadius = Math.max(width, height) * 0.6;
     const radius = maxRadius * Math.min(1, Math.pow(progress, 0.65));
-    const gradient = ctx.createRadialGradient(width / 2, height / 2, radius * 0.3, width / 2, height / 2, radius);
+    const gradient = ctx.createRadialGradient(width / 2, height / 2, radius * 0.1, width / 2, height / 2, radius);
     gradient.addColorStop(0, "rgba(255,255,255,0.4)");
     gradient.addColorStop(0.45, "rgba(140,255,215,0.18)");
     gradient.addColorStop(1, "rgba(255,255,255,0)");
