@@ -1192,6 +1192,10 @@ h2 {
 }
 
 @media (max-width: 1024px) {
+  .logo-sub {
+    display: none;
+  }
+
   .site-header {
     flex-wrap: wrap;
     gap: 18px;
