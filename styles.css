@@ -156,6 +156,7 @@ body {
   color: rgba(255, 255, 255, 0.82);
 }
 
+
 .nav {
   display: flex;
   gap: 18px;
@@ -1193,8 +1194,10 @@ h2 {
 
 @media (max-width: 1024px) {
   .logo-sub {
-    display: none;
+    font-size: 0.4rem;
   }
+
+
 
   .site-header {
     flex-wrap: wrap;
