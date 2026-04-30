@@ -9,19 +9,20 @@ const translations = {
     },
     hero: {
       eyebrow: "AI-native modern websites",
-      title: "Launch a breathtaking website faster than ever..",
+      title: "Launch a breathtaking website faster than ever.",
       lead: "Space Code Studio crafts ultra-modern web experiences that convert. Collaborate with me for a polished one-off build or an ongoing AI fueled iteration loop.",
       ctaPrimary: "Start your project",
       ctaSecondary: "View my work",
       offerOne: "Launch-ready site from 499 CHF",
-      offerTwo: "Subscription from 69 CHF/month",
+      offerTwo: "Subscription from 59 CHF/month",
     },
     portfolio: {
       eyebrow: "Selected work",
-      title: "Recent product launches.",
-      lovana: "Dating assistant app driven by AI designed to improve your dating experiences. First messages generator, profile analyzer and many more ",
-      teamvote: "Real-time voting beast for medium-large teams and companies. Live onscreen results simply by scanning a qr code from your phone",
-      traislate: "Traislate.ai — Transcribe your meeting into any desired language in seconds; it is fully multilingual.",
+      title: "Recent AI-assisted product launches.",
+      primeLane: "Premium Swiss transport service website with a polished brand presence and clear booking path.",
+      lovana: "Dating assistant app driven by AI designed to improve your dating experiences.",
+      teamvote: "Real-time decision platform for distributed teams featuring adaptive AI-driven insights.",
+      traislate: "Traislate.ai — Transcribe multilingual meetings and receive polished translations within seconds.",
       caseStudy: "Case study",
     },
     services: {
@@ -29,12 +30,12 @@ const translations = {
       title: "Future-ready web experiences tailored to your goals.",
       items: [
         {
-          title: "Info - Pages",
-          copy: "A beautifully designed info page for your business with traffic analytics, lead forms, and fresh visual accents. Multilingual, optimized, and functional to raise your brand to the next level.",
+          title: "Informational sites",
+          copy: "A beautifully designed home for your business with traffic analytics, lead forms, and fresh visual accents.",
         },
         {
           title: "AI-powered experiences",
-          copy: "More complex sites that plug into the newest large language model APIs to deliver mind-blowing workflows. The role of AI on the modern web has never been bigger—sky is the limit.",
+          copy: "More complex sites that plug into the newest large language model APIs to deliver mind-blowing workflows.",
         },
         {
           title: "E-commerce",
@@ -42,28 +43,28 @@ const translations = {
         },
         {
           title: "Integrations",
-          copy: "We implement any integration you need—from Stripe/PayPal payments that let you earn through the site to advanced databases that keep it maximally capable.",
+          copy: "We implement any integration you need—from Stripe/PayPal payments to advanced databases that keep your site capable.",
         },
       ],
     },
     pricing: {
       eyebrow: "Transparent pricing",
-      title: "It doesn't have to cost a fortune",
+      title: "Choose a launch or a living, breathing product relationship.",
       projectBadge: "Project Launch",
       projectTitle: "One-time build",
       projectPrice: "from 499 CHF",
       projectFeatures: [
-        "Tailored concept, UX, and UI crafted with best coding methods and tools",
-        "Responsive, high-performing site both on desktop and mobile,ready to deploy within days",
+        "Tailored concept, UX, and UI crafted with AI co-pilots",
+        "Responsive, high-performing site ready to deploy within days",
         "Analytics, SEO foundation, and accessibility baked in",
       ],
       projectCTA: "Reserve your slot",
       subscriptionBadge: "Continuous Evolution",
       subscriptionTitle: "Subscription",
-      subscriptionPrice: "69 CHF · monthly",
+      subscriptionPrice: "from 59 CHF · monthly",
       subscriptionFeatures: [
+        "Unlimited iterative updates and experiments",
         "When website needs an constant updates and improvements, we are here for you.",
-        "No hosting cost - just domain and we are good to go!",
         "Priority support, hosting guidance, and performance checks",
       ],
       subscriptionCTA: "Join the waitlist",
@@ -74,7 +75,7 @@ const translations = {
       steps: [
         {
           title: "Discovery + Preview",
-          copy: "Share your goals and aesthetic. Receive a complimentary concept preview. You don't like the concept? We will start from scratch or you decide not to continue the jurney with us. It is no cost with us! ",
+          copy: "Share your goals and aesthetic. Receive a complimentary AI-backed concept preview so you can feel the direction before committing.",
         },
         {
           title: "Design + Build",
@@ -88,14 +89,14 @@ const translations = {
     },
     about: {
       eyebrow: "About me",
-      title: "Jan Rejnowicz — crafting human experiences with AI precision.",
+      title: "Jan Rejnowicz — crafting human experiences with precision.",
       copy: [
-        "Space Code Studio blends state-of-the-art automation with meticulous human taste to ship products that feel both futuristic and unmistakably personal.",
+        "Jan'sites blends state-of-the-art automation with meticulous human taste to ship products that feel both futuristic and unmistakably personal.",
         "I partner with founders, agencies, and teams that want to move fast without sacrificing craft. Let’s co-create something that feels alive.",
       ],
       stats: [
-        { label: "Projects shipped", value: "40+" },
-        { label: "AI automations deployed", value: "120+" },
+        { label: "Projects shipped", value: "20+" },
+        { label: "AI automations deployed", value: "70+" },
         { label: "Avg. turnaround", value: "7 days" },
       ],
     },
@@ -104,9 +105,21 @@ const translations = {
       title: "Ready for a site that feels alive from the first scroll?",
       copy: "Send a message with your idea, target audience, and timeline. I’ll respond within 24 hours with the free preview concept and next steps.",
       calendar: "Book a discovery call",
+      form: {
+        name: "Name",
+        email: "Email",
+        message: "Message",
+        send: "Send message",
+        sending: "Sending...",
+        successTitle: "Message sent!",
+        successMessage: "Thank you for reaching out. I'll get back to you within 24 hours with ideas for your project.",
+        errorTitle: "Something went wrong",
+        errorMessage: "Your message couldn't be sent. Please try again or contact me directly at jan@spacecode.ch",
+        closeBtn: "Got it",
+      },
     },
     footer: {
-      copy: "© CodeFlow Studio. Built with passion and AI.",
+      copy: "© Space Code Studio by Jan Rejnowicz. Built with passion and AI.",
       backToTop: "Back to top",
     },
   },
@@ -119,63 +132,64 @@ const translations = {
       contact: "Kontakt",
     },
     hero: {
-      eyebrow: "AI-native digitale Experiences",
-      title: "Starte eine beeindruckende Website, angetrieben von den neuesten AI-Workflows.",
-      lead: "CodeFlow Studio erschafft ultra-moderne Web-Erlebnisse, die konvertieren. Arbeite mit mir für einen glänzenden Einzelauftrag oder einen laufenden AI-gestützten Verbesserungszyklus.",
-      ctaPrimary: "Projekt anfragen",
+      eyebrow: "AI-native moderne Websites",
+      title: "Starte eine atemberaubende Website schneller als je zuvor.",
+      lead: "Space Code Studio erschafft ultra-moderne Web-Erlebnisse, die konvertieren. Arbeite mit mir für einen glänzenden Einzelauftrag oder einen laufenden AI-gestützten Iterationszyklus.",
+      ctaPrimary: "Starte dein Projekt",
       ctaSecondary: "Meine Arbeiten ansehen",
       offerOne: "Launch-fertige Website ab 499 CHF",
-      offerTwo: "Abo ab 49 CHF pro Monat",
+      offerTwo: "Abo ab 59 CHF pro Monat",
     },
     portfolio: {
       eyebrow: "Ausgewählte Arbeiten",
       title: "Aktuelle AI-unterstützte Produktlaunches.",
-      lovana: "Ein Wellness-Begleiter, der achtsame Rituale mit prädiktiver AI für persönliche Journeys verbindet.",
-      teamvote: "Plattform für Entscheidungen in verteilten Teams mit adaptiven, AI-gestützten Insights.",
-      traislate: "Traislate.ai — Transkribiere jedes Meeting blitzschnell in deine Wunsch-Sprache, echte Mehrsprachigkeit inklusive.",
+      primeLane: "Premium-Website für Schweizer Transportservices mit hochwertigem Markenauftritt und klarem Buchungsweg.",
+      lovana: "Dating-Assistenten-App von AI angetrieben, entwickelt um deine Dating-Erfahrungen zu verbessern.",
+      teamvote: "Echtzeit-Entscheidungsplattform für verteilte Teams mit adaptiven, AI-gesteuerten Insights.",
+      traislate: "Traislate.ai — Transkribiere mehrsprachige Meetings und erhalte innerhalb von Sekunden ausgefeilte Übersetzungen.",
       caseStudy: "Case Study",
     },
     services: {
       eyebrow: "Was wir bauen",
-      title: "Web-Erlebnisse, die dein Vorhaben nach vorn bringen.",
+      title: "Zukunftssichere Web-Erlebnisse, maßgeschneidert für deine Ziele.",
       items: [
         {
           title: "Informationsseiten",
-          copy: "Ein wunderschön gestalteter Auftritt für dein Business mit Traffic-Analytics, Formularen und frischen visuellen Trends. Mehrsprachig, optimiert und funktional – hebt dein Unternehmen aufs nächste Level.",
+          copy: "Ein wunderschön gestaltetes Zuhause für dein Business mit Traffic-Analytics, Lead-Formularen und frischen visuellen Akzenten.",
         },
         {
           title: "AI-basierte Experiences",
-          copy: "Komplexere Webauftritte, die die neuesten Integrationen zu beliebten Large-Language-Models nutzen. Dank intelligenter Automationen sind spektakuläre Workflows möglich – Grenzen gibt es praktisch keine.",
+          copy: "Komplexere Seiten, die sich in die neuesten Large-Language-Model-APIs einklinken, um atemberaubende Workflows zu liefern.",
         },
         {
-          title: "Online-Shops",
-          copy: "Starte deinen modernen E-Commerce-Auftritt mit uns schneller als je zuvor – inklusive schlanker Katalog- und Checkout-Flows.",
+          title: "E-Commerce",
+          copy: "Starte mit uns schneller als je zuvor einen modernen Online-Shop, komplett mit optimiertem Katalog-Management und Checkout-Flows.",
         },
         {
           title: "Integrationen",
-          copy: "Wir realisieren jede gewünschte Integration: Stripe/PayPal-Zahlungen, damit deine Seite Umsatz bringt, bis hin zu komplexen Datenbanken für maximale Funktionalität.",
+          copy: "Wir implementieren jede benötigte Integration – von Stripe/PayPal-Zahlungen bis zu fortschrittlichen Datenbanken, die deine Seite leistungsfähig halten.",
         },
       ],
     },
     pricing: {
       eyebrow: "Transparente Preise",
-      title: "Wähle zwischen Launch oder einer lebendigen Produktpartnerschaft.",
+      title: "Wähle einen Launch oder eine lebendige, atmende Produktbeziehung.",
       projectBadge: "Projekt Launch",
       projectTitle: "Einmalige Umsetzung",
-      projectPrice: "499 CHF · Fixpreis",
+      projectPrice: "ab 499 CHF ",
       projectFeatures: [
-        "Individuelles Konzept, UX und UI mit AI-Co-Piloten entwickelt",
-        "Responsiver, performanter Auftritt ready to deploy in wenigen Tagen",
-        "Analytics, SEO-Fundament und Accessibility inklusive",
+        "Maßgeschneidertes Konzept, UX und UI, entwickelt mit AI-Co-Piloten",
+        "Responsive, hochperformante Website, bereit zum Deployment innerhalb weniger Tage",
+        "Analytics, SEO-Fundament und Barrierefreiheit inklusive",
       ],
       projectCTA: "Slot reservieren",
       subscriptionBadge: "Kontinuierliche Evolution",
       subscriptionTitle: "Subscription",
-      subscriptionPrice: "49 CHF · monatlich",
+      subscriptionPrice: "ab 59 CHF · monatlich",
       subscriptionFeatures: [
-        "Unlimitierte Iterationen und Experimente",
-        "AI-gestützte Inhalte und Conversion-Optimierung",
-        "Priorisierter Support, Hosting-Guidance und Performance-Checks",
+        "Unlimitierte iterative Updates und Experimente",
+        "Wenn deine Website konstante Updates und Verbesserungen benötigt, sind wir für dich da.",
+        "Priorisierter Support, Hosting-Beratung und Performance-Checks",
       ],
       subscriptionCTA: "Auf Warteliste setzen",
     },
@@ -185,7 +199,7 @@ const translations = {
       steps: [
         {
           title: "Discovery + Preview",
-          copy: "Teil deine Ziele und Ästhetik. Erhalte ein kostenloses AI-gestütztes Konzept-Preview, bevor du dich festlegst.",
+          copy: "Teile deine Ziele und Ästhetik. Erhalte eine kostenlose, AI-gestützte Konzept-Vorschau, damit du die Richtung spüren kannst, bevor du dich verpflichtest.",
         },
         {
           title: "Design + Build",
@@ -199,25 +213,37 @@ const translations = {
     },
     about: {
       eyebrow: "Über mich",
-      title: "Jan Rejnowicz — humanes Erlebnis, AI-Präzision.",
+      title: "Jan Rejnowicz — menschliche Erlebnisse mit Präzision gestalten.",
       copy: [
-        "Ich bin AI-native Developer und Designer. CodeFlow Studio verbindet modernste Automatisierung mit menschlichem Feingefühl für Produkte, die futuristisch und persönlich wirken.",
-        "Ich arbeite mit Gründer:innen, Agenturen und Teams, die schnell vorankommen wollen, ohne Craft einzubüßen. Lass uns etwas Lebendiges erschaffen.",
+        "Jan'sites verbindet modernste Automatisierung mit sorgfältigem menschlichem Geschmack, um Produkte zu liefern, die sich sowohl futuristisch als auch unverkennbar persönlich anfühlen.",
+        "Ich arbeite mit Gründern, Agenturen und Teams zusammen, die schnell vorankommen wollen, ohne auf Handwerkskunst zu verzichten. Lass uns gemeinsam etwas erschaffen, das sich lebendig anfühlt.",
       ],
       stats: [
-        { label: "Umgesetzte Projekte", value: "40+" },
-        { label: "AI-Automationen live", value: "120+" },
+        { label: "Umgesetzte Projekte", value: "20+" },
+        { label: "AI-Automationen im Einsatz", value: "70+" },
         { label: "Ø Durchlaufzeit", value: "7 Tage" },
       ],
     },
     contact: {
       eyebrow: "Lass uns bauen",
-      title: "Bereit für eine Website, die vom ersten Scroll an begeistert?",
-      copy: "Schick mir deine Idee, Zielgruppe und Timeline. Innerhalb von 24h melde ich mich mit dem kostenlosen Preview-Konzept und den nächsten Schritten.",
+      title: "Bereit für eine Website, die sich vom ersten Scroll an lebendig anfühlt?",
+      copy: "Sende eine Nachricht mit deiner Idee, Zielgruppe und Zeitplan. Ich melde mich innerhalb von 24 Stunden mit dem kostenlosen Konzept-Preview und den nächsten Schritten.",
       calendar: "Discovery-Call buchen",
+      form: {
+        name: "Name",
+        email: "E-Mail",
+        message: "Nachricht",
+        send: "Nachricht senden",
+        sending: "Wird gesendet...",
+        successTitle: "Nachricht gesendet!",
+        successMessage: "Vielen Dank für deine Nachricht. Ich melde mich innerhalb von 24 Stunden mit Ideen für dein Projekt bei dir.",
+        errorTitle: "Etwas ist schiefgelaufen",
+        errorMessage: "Deine Nachricht konnte nicht gesendet werden. Bitte versuche es erneut oder kontaktiere mich direkt unter jan@spacecode.ch",
+        closeBtn: "Verstanden",
+      },
     },
     footer: {
-      copy: "© CodeFlow Studio. Mit Leidenschaft und AI gebaut.",
+      copy: "© Space Code Studio von Jan Rejnowicz. Mit Leidenschaft und AI gebaut.",
       backToTop: "Zurück nach oben",
     },
   },
@@ -237,6 +263,13 @@ const subscribeToMediaQuery = (mediaQuery, handler) => {
   } else if (typeof mediaQuery.addListener === "function") {
     mediaQuery.addListener(handler);
   }
+};
+
+const isLowPowerDevice = () => {
+  if (typeof navigator === "undefined") return false;
+  const memory = navigator.deviceMemory || 8;
+  const cores = navigator.hardwareConcurrency || 8;
+  return memory <= 4 || cores <= 4;
 };
 
 const setActiveLanguage = (lang) => {
@@ -297,14 +330,15 @@ const initConstellation = () => {
   if (!canvas) return null;
   const ctx = canvas.getContext("2d");
   if (!ctx) return null;
+  const lowPowerDevice = isLowPowerDevice();
 
   const config = {
-    minParticles: 18,
-    maxParticles: 48,
-    frameInterval: 1000 / 45,
-    linkDistance: 100,
-    pointerDistance: 140,
-    pointerInfluence: 120,
+    minParticles: lowPowerDevice ? 10 : 18,
+    maxParticles: lowPowerDevice ? 28 : 42,
+    frameInterval: 1000 / (lowPowerDevice ? 24 : 30),
+    linkDistance: lowPowerDevice ? 82 : 100,
+    pointerDistance: lowPowerDevice ? 110 : 140,
+    pointerInfluence: lowPowerDevice ? 95 : 120,
   };
 
   const pointer = { x: 0, y: 0, active: false };
@@ -503,7 +537,7 @@ const initConstellation = () => {
     pointer.active = false;
   };
 
-  window.addEventListener("mousemove", handlePointerMove);
+  window.addEventListener("mousemove", handlePointerMove, { passive: true });
   window.addEventListener("mouseleave", handlePointerLeave);
 
   return {
@@ -511,10 +545,139 @@ const initConstellation = () => {
   };
 };
 
+const initLazyPortfolioFrames = () => {
+  const frames = Array.from(document.querySelectorAll(".monitor-screen iframe[data-src]"));
+  if (!frames.length) return;
+
+  const loadFrame = (frame) => {
+    if (frame.dataset.loaded === "true") return;
+    const src = frame.dataset.src;
+    if (!src) return;
+    frame.dataset.loaded = "true";
+    frame.addEventListener(
+      "load",
+      () => {
+        frame.closest(".monitor-screen")?.classList.add("is-loaded");
+      },
+      { once: true },
+    );
+    frame.src = src;
+  };
+
+  if (typeof IntersectionObserver !== "function") {
+    frames.forEach(loadFrame);
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        window.setTimeout(() => loadFrame(entry.target), Number(entry.target.dataset.loadDelay) || 0);
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      rootMargin: "650px 0px",
+      threshold: 0.01,
+    },
+  );
+
+  frames.forEach((frame, index) => {
+    frame.dataset.loadDelay = String(index * 220);
+    observer.observe(frame);
+  });
+};
+
+const initBackgroundVideo = () => {
+  const video = document.getElementById("background-video");
+  const wrapper = video?.closest(".video-background");
+  if (!video || !wrapper) return null;
+
+  const fadeDuration = 1400;
+  let restartTimeout = null;
+  let revealTimeout = null;
+  let isFading = false;
+  let reduceMotion = false;
+
+  const play = () => {
+    if (reduceMotion) return;
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {
+        wrapper.classList.add("is-fading");
+      });
+    }
+  };
+
+  const clearTimers = () => {
+    if (restartTimeout) {
+      clearTimeout(restartTimeout);
+      restartTimeout = null;
+    }
+    if (revealTimeout) {
+      clearTimeout(revealTimeout);
+      revealTimeout = null;
+    }
+  };
+
+  const fadeAndRestart = () => {
+    if (isFading || reduceMotion) return;
+    isFading = true;
+    wrapper.classList.add("is-fading");
+
+    restartTimeout = setTimeout(() => {
+      video.currentTime = 0;
+      play();
+      revealTimeout = setTimeout(() => {
+        wrapper.classList.remove("is-fading");
+        isFading = false;
+      }, Math.round(fadeDuration * 0.55));
+    }, fadeDuration);
+  };
+
+  video.addEventListener("loadedmetadata", () => {
+    video.currentTime = 0;
+    play();
+  });
+
+  video.addEventListener("timeupdate", () => {
+    if (!Number.isFinite(video.duration) || video.duration <= 0) return;
+    if (video.duration - video.currentTime <= fadeDuration / 1000) {
+      fadeAndRestart();
+    }
+  });
+
+  video.addEventListener("ended", fadeAndRestart);
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      video.pause();
+    } else {
+      play();
+    }
+  });
+  play();
+
+  return {
+    setReducedMotion(value) {
+      reduceMotion = value;
+      clearTimers();
+      isFading = false;
+      wrapper.classList.toggle("is-fading", !!value);
+      if (reduceMotion) {
+        video.pause();
+      } else {
+        play();
+      }
+    },
+  };
+};
+
 const initHeroExplosion = () => {
   const canvas = document.getElementById("explosion-canvas");
   const heroVisual = document.querySelector(".hero-visual");
   if (!canvas || !heroVisual) return;
+  if (isLowPowerDevice()) return;
 
   const storageKey = "heroExplosionPlayed";
   let alreadyPlayed = false;
@@ -720,16 +883,138 @@ const initNavigationToggle = () => {
   }
 };
 
+const initContactForm = () => {
+  const form = document.getElementById("contact-form");
+  const submitBtn = document.getElementById("submit-btn");
+  const modal = document.getElementById("success-modal");
+  const modalTitle = document.getElementById("modal-title");
+  const modalMessage = document.getElementById("modal-message");
+  const modalCloseBtn = document.getElementById("modal-close-btn");
+  const modalIcon = modal?.querySelector(".modal-icon");
+  
+  if (!form || !submitBtn || !modal) return;
+
+  const getCurrentLang = () => {
+    const activeBtn = document.querySelector(".lang-button.is-active");
+    return activeBtn ? activeBtn.dataset.lang : "en";
+  };
+
+  const getFormTranslation = (key) => {
+    const lang = getCurrentLang();
+    return translations[lang]?.contact?.form?.[key] || translations.en.contact.form[key];
+  };
+
+  const showModal = (isSuccess) => {
+    if (isSuccess) {
+      modalTitle.textContent = getFormTranslation("successTitle");
+      modalMessage.textContent = getFormTranslation("successMessage");
+      modalIcon.className = "modal-icon success";
+      modalIcon.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="22 4 12 14.01 9 11.01" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>`;
+    } else {
+      modalTitle.textContent = getFormTranslation("errorTitle");
+      modalMessage.textContent = getFormTranslation("errorMessage");
+      modalIcon.className = "modal-icon error";
+      modalIcon.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="15" y1="9" x2="9" y2="15" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="9" y1="9" x2="15" y2="15" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>`;
+    }
+    modalCloseBtn.textContent = getFormTranslation("closeBtn");
+    modal.style.display = "flex";
+    // Small delay to trigger CSS transition
+    requestAnimationFrame(() => {
+      modal.classList.add("is-active");
+    });
+    document.body.style.overflow = "hidden";
+  };
+
+  const hideModal = () => {
+    modal.classList.remove("is-active");
+    document.body.style.overflow = "";
+    // Hide completely after transition
+    setTimeout(() => {
+      if (!modal.classList.contains("is-active")) {
+        modal.style.display = "none";
+      }
+    }, 400);
+  };
+
+  // Close modal events
+  modalCloseBtn?.addEventListener("click", hideModal);
+  modal?.addEventListener("click", (e) => {
+    if (e.target === modal) hideModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("is-active")) {
+      hideModal();
+    }
+  });
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    
+    const submitText = submitBtn.querySelector("span[data-i18n]");
+    const spinner = submitBtn.querySelector(".spinner");
+    
+    // Show loading state
+    submitBtn.disabled = true;
+    if (submitText) submitText.textContent = getFormTranslation("sending");
+    if (spinner) spinner.style.display = "inline-block";
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        showModal(true);
+        form.reset();
+      } else {
+        throw new Error(result.message || "Form submission failed");
+      }
+    } catch (error) {
+      console.error("Form error:", error);
+      showModal(false);
+    } finally {
+      // Reset button state
+      submitBtn.disabled = false;
+      if (submitText) submitText.textContent = getFormTranslation("send");
+      if (spinner) spinner.style.display = "none";
+    }
+  });
+};
+
 const init = () => {
+  const lowPowerDevice = isLowPowerDevice();
+  document.body.classList.toggle("low-power", lowPowerDevice);
+  document.documentElement.classList.toggle("low-power", lowPowerDevice);
   initLanguageSwitcher();
   initNavigationToggle();
   initRevealObserver();
+  initContactForm();
+  initLazyPortfolioFrames();
+  const backgroundVideo = initBackgroundVideo();
   const constellation = initConstellation();
 
   const motionPreference = getMediaQuery("(prefers-reduced-motion: reduce)");
   const applyMotionPreference = (matches) => {
     document.body.classList.toggle("reduced-motion", !!matches);
     document.documentElement.classList.toggle("reduced-motion", !!matches);
+    backgroundVideo?.setReducedMotion(!!matches);
     constellation?.setReducedMotion(!!matches);
   };
 
