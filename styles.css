@@ -122,21 +122,6 @@ body {
   contain-intrinsic-size: auto 720px;
 }
 
-.section::after {
-  content: "";
-  position: absolute;
-  inset: -80px -5%;
-  background: linear-gradient(135deg, rgba(91, 141, 255, 0.15), transparent 55%);
-  filter: blur(80px);
-  opacity: 0;
-  transition: opacity 0.9s var(--transition);
-  z-index: -1;
-}
-
-.section.is-visible::after {
-  opacity: 1;
-}
-
 .site-header,
 .site-footer {
   width: 100%;
@@ -1613,10 +1598,6 @@ h2 {
     height: 120%;
   }
 
-  .section::after {
-    inset: -60px 0;
-  }
-
   .nav-wrapper {
     position: fixed;
     top: 20px;
@@ -1945,9 +1926,6 @@ h2 {
     width: 100%;
   }
 
-  .section::after {
-    inset: -40px 0;
-  }
 }
 
 .section,
@@ -2010,7 +1988,6 @@ h2 {
   transition: none;
 }
 
-.low-power .section::after,
 .low-power .hero-visual::before,
 .low-power .planet::after,
 .low-power .contact-card::before,
