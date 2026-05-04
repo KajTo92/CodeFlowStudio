@@ -1859,6 +1859,11 @@ h2 {
     padding: 0 20px 30px;
   }
 
+  #portfolio {
+    content-visibility: visible;
+    contain-intrinsic-size: auto;
+  }
+
   .page {
     padding: 40px 0 60px;
   }
@@ -1989,6 +1994,20 @@ h2 {
 
 .section.is-visible .service-card:nth-child(4) {
   transition-delay: 0.24s;
+}
+
+@media (max-width: 720px) {
+  .section,
+  .portfolio-card,
+  .service-card,
+  .pricing-card,
+  .step-card,
+  .contact-card,
+  .stat-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .reduced-motion {
