@@ -850,6 +850,21 @@ const initNavigationToggle = () => {
     }
   });
 
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (
+      !isMobile() ||
+      !document.body.classList.contains("nav-open") ||
+      !(target instanceof Node) ||
+      navWrapper.contains(target) ||
+      toggle.contains(target)
+    ) {
+      return;
+    }
+
+    closeMenu();
+  });
+
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
       if (document.body.classList.contains("nav-open")) {
