@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/calendar",
+      "destination": "https://calendar-khaki-tau.vercel.app/"
+    },
+    {
+      "source": "/calendar/:path*",
+      "destination": "https://calendar-khaki-tau.vercel.app/:path*"
+    }
+  ]
+}
