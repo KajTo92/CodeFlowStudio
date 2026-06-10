@@ -352,6 +352,8 @@ body.nav-open .nav-toggle-line:last-child {
   gap: 24px;
   position: relative;
   padding-right: 40px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .eyebrow {
@@ -371,6 +373,7 @@ h3 {
 
 h1 {
   font-size: clamp(2.8rem, 5vw, 4.4rem);
+  line-height: 1.05;
 }
 
 h2 {
@@ -390,6 +393,7 @@ h2 {
   color: var(--text-secondary);
   font-size: 1.05rem;
   line-height: 1.7;
+  overflow-wrap: anywhere;
 }
 
 
@@ -406,6 +410,8 @@ h2 {
 }
 
 .pill {
+  max-width: 100%;
+  min-width: 0;
   padding: 12px 20px;
   border-radius: var(--radius-pill);
   background: rgba(140, 255, 215, 0.16);
@@ -419,6 +425,8 @@ h2 {
   align-items: center;
   gap: 12px;
   color: var(--accent-3);
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .hero-visual {
@@ -759,6 +767,8 @@ h2 {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  max-width: 100%;
+  min-width: 0;
   padding: 14px 26px;
   border-radius: var(--radius-pill);
   text-decoration: none;
@@ -766,6 +776,8 @@ h2 {
   letter-spacing: 0.02em;
   transition: transform 0.35s var(--transition), box-shadow 0.35s var(--transition), background 0.35s var(--transition);
   border: 1px solid transparent;
+  text-align: center;
+  white-space: normal;
 }
 
 .button.primary {
@@ -880,6 +892,11 @@ h2 {
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.72);
+  min-width: 0;
+  max-width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .monitor-screen {
@@ -1839,6 +1856,17 @@ h2 {
     border-radius: 18px;
   }
 
+  h1 {
+    font-size: 2.4rem;
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.2em;
+    overflow-wrap: anywhere;
+  }
+
   .nav {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 12px 10px;
@@ -1889,6 +1917,10 @@ h2 {
 
   .hero {
     gap: 36px;
+  }
+
+  .hero-content {
+    width: 100%;
   }
 
   .hero-visual {
@@ -1951,6 +1983,32 @@ h2 {
     width: 100%;
   }
 
+  .pricing-pills {
+    width: 100%;
+  }
+
+  .pill {
+    width: 100%;
+    justify-content: center;
+  }
+
+}
+
+@media (max-width: 380px) {
+  .section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  h1 {
+    font-size: 2.18rem;
+  }
+
+  .button,
+  .pill {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 .section,

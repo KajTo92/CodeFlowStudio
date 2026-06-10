@@ -23,6 +23,7 @@ const translations = {
       lovana: "Dating assistant app driven by AI designed to improve your dating experiences.",
       teamvote: "Real-time decision platform for distributed teams featuring adaptive AI-driven insights.",
       traislate: "Traislate.ai — Transcribe multilingual meetings and receive polished translations within seconds.",
+      spaceDrive: "Space Drive — an immersive automotive website with a futuristic visual direction and fast browsing flow.",
       caseStudy: "Case study",
     },
     services: {
@@ -89,7 +90,7 @@ const translations = {
     },
     about: {
       eyebrow: "About me",
-      title: "Jan Rejnowicz — crafting human experiences with precision.",
+      title: "Jan — crafting human experiences with precision.",
       copy: [
         "Jan'sites blends state-of-the-art automation with meticulous human taste to ship products that feel both futuristic and unmistakably personal.",
         "I partner with founders, agencies, and teams that want to move fast without sacrificing craft. Let’s co-create something that feels alive.",
@@ -119,7 +120,7 @@ const translations = {
       },
     },
     footer: {
-      copy: "© Space Code Studio by Jan Rejnowicz. Built with passion and AI.",
+      copy: "© Space Code Studio by Jan. Built with passion and AI.",
       backToTop: "Back to top",
     },
   },
@@ -147,6 +148,7 @@ const translations = {
       lovana: "Dating-Assistenten-App von AI angetrieben, entwickelt um deine Dating-Erfahrungen zu verbessern.",
       teamvote: "Echtzeit-Entscheidungsplattform für verteilte Teams mit adaptiven, AI-gesteuerten Insights.",
       traislate: "Traislate.ai — Transkribiere mehrsprachige Meetings und erhalte innerhalb von Sekunden ausgefeilte Übersetzungen.",
+      spaceDrive: "Space Drive — immersive Automotive-Website mit futuristischer Bildsprache und schneller Nutzerführung.",
       caseStudy: "Case Study",
     },
     services: {
@@ -213,7 +215,7 @@ const translations = {
     },
     about: {
       eyebrow: "Über mich",
-      title: "Jan Rejnowicz — menschliche Erlebnisse mit Präzision gestalten.",
+      title: "Jan — menschliche Erlebnisse mit Präzision gestalten.",
       copy: [
         "Jan'sites verbindet modernste Automatisierung mit sorgfältigem menschlichem Geschmack, um Produkte zu liefern, die sich sowohl futuristisch als auch unverkennbar persönlich anfühlen.",
         "Ich arbeite mit Gründern, Agenturen und Teams zusammen, die schnell vorankommen wollen, ohne auf Handwerkskunst zu verzichten. Lass uns gemeinsam etwas erschaffen, das sich lebendig anfühlt.",
@@ -243,7 +245,7 @@ const translations = {
       },
     },
     footer: {
-      copy: "© Space Code Studio von Jan Rejnowicz. Mit Leidenschaft und AI gebaut.",
+      copy: "© Space Code Studio von Jan. Mit Leidenschaft und AI gebaut.",
       backToTop: "Zurück nach oben",
     },
   },
