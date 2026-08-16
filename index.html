@@ -21,6 +21,18 @@
   <body class="is-loading">
     <a class="skip-link" href="#main">Skip to content</a>
 
+    <div class="page-loader" data-page-loader role="status" aria-live="polite" aria-label="Loading the hero animation">
+      <div class="page-loader__content">
+        <span class="page-loader__brand" aria-hidden="true">
+          <span>Space</span><span>Code</span>
+        </span>
+        <span class="page-loader__value" aria-hidden="true">
+          <span data-loader-value>0</span><span>%</span>
+        </span>
+        <span class="page-loader__track" aria-hidden="true"><span></span></span>
+      </div>
+    </div>
+
     <div class="page-noise" aria-hidden="true"></div>
     <canvas id="starfield" aria-hidden="true"></canvas>
 
@@ -66,11 +78,11 @@
               id="hero-film"
               muted
               playsinline
-              preload="auto"
+              preload="none"
               tabindex="-1"
+              data-mobile-src="Media/spacecode-scroll-mobile.mp4"
+              data-desktop-src="Media/spacecode-scroll-desktop-1080p.mp4"
             >
-              <source src="Media/spacecode-scroll-mobile.mp4" type="video/mp4" media="(max-width: 620px)" />
-              <source src="Media/spacecode-scroll-desktop-1080p.mp4" type="video/mp4" />
             </video>
             <div class="cinema-vignette"></div>
           </div>

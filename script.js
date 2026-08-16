@@ -316,6 +316,122 @@ const initPointerParallax = () => {
   }, { passive: true });
 };
 
+const initPageLoader = () => {
+  const loader = document.querySelector("[data-page-loader]");
+  const value = loader?.querySelector("[data-loader-value]");
+  const video = document.getElementById("hero-film");
+  const guardedElements = [document.querySelector("[data-header]"), document.getElementById("main")].filter(Boolean);
+  const startedAt = performance.now();
+  const minimumVisibleTime = prefersReducedMotion.matches ? 0 : 450;
+  let finished = false;
+  let fallbackStarted = false;
+  let objectUrl = "";
+  let stallTimer = 0;
+
+  guardedElements.forEach((element) => element.setAttribute("inert", ""));
+
+  const setProgress = (progress) => {
+    const normalized = clamp(progress);
+    loader?.style.setProperty("--loader-progress", normalized.toFixed(3));
+    if (value) value.textContent = String(Math.round(normalized * 100));
+  };
+
+  const finish = () => {
+    if (finished) return;
+    finished = true;
+    window.clearTimeout(stallTimer);
+    setProgress(1);
+
+    const reveal = () => {
+      guardedElements.forEach((element) => element.removeAttribute("inert"));
+      document.body.classList.remove("is-loading");
+      document.body.classList.add("loader-ready");
+      window.setTimeout(() => loader?.remove(), prefersReducedMotion.matches ? 0 : 700);
+    };
+
+    const remaining = Math.max(0, minimumVisibleTime - (performance.now() - startedAt));
+    window.setTimeout(reveal, remaining);
+  };
+
+  if (!loader || !video) {
+    finish();
+    return;
+  }
+
+  const source = window.matchMedia("(max-width: 620px)").matches
+    ? video.dataset.mobileSrc
+    : video.dataset.desktopSrc;
+
+  if (!source) {
+    finish();
+    return;
+  }
+
+  const waitForVideoFrame = () => {
+    if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+      finish();
+      return;
+    }
+    video.addEventListener("loadeddata", finish, { once: true });
+    video.addEventListener("error", finish, { once: true });
+  };
+
+  const useDirectSource = () => {
+    if (finished || fallbackStarted) return;
+    fallbackStarted = true;
+    window.clearTimeout(stallTimer);
+    video.src = source;
+    video.preload = "auto";
+    video.load();
+    waitForVideoFrame();
+    stallTimer = window.setTimeout(finish, 12000);
+  };
+
+  const request = new XMLHttpRequest();
+  request.open("GET", source, true);
+  request.responseType = "blob";
+
+  const refreshStallTimer = () => {
+    window.clearTimeout(stallTimer);
+    stallTimer = window.setTimeout(() => {
+      request.abort();
+      useDirectSource();
+    }, 30000);
+  };
+
+  request.addEventListener("progress", (event) => {
+    if (event.lengthComputable && event.total > 0) {
+      setProgress(event.loaded / event.total);
+    }
+    refreshStallTimer();
+  });
+
+  request.addEventListener("load", () => {
+    window.clearTimeout(stallTimer);
+    if (request.status < 200 || request.status >= 300 || !request.response?.size) {
+      useDirectSource();
+      return;
+    }
+    objectUrl = URL.createObjectURL(request.response);
+    video.src = objectUrl;
+    video.load();
+    waitForVideoFrame();
+  });
+
+  request.addEventListener("error", useDirectSource);
+  request.addEventListener("abort", () => {
+    if (!video.src) useDirectSource();
+  });
+
+  window.addEventListener("pagehide", () => {
+    if (objectUrl) URL.revokeObjectURL(objectUrl);
+  }, { once: true });
+
+  setProgress(0);
+  refreshStallTimer();
+  request.send();
+};
+
 const initScrollCinema = () => {
   const section = document.querySelector("[data-scroll-cinema]");
   const video = document.getElementById("hero-film");
@@ -660,6 +776,7 @@ const init = () => {
   initHeader();
   initStarfield();
   initPointerParallax();
+  initPageLoader();
   initScrollCinema();
   initMissionScroll();
   initProjectScroll();
@@ -668,7 +785,6 @@ const init = () => {
   document.querySelectorAll("[data-year]").forEach((element) => {
     element.textContent = new Date().getFullYear();
   });
-  requestAnimationFrame(() => document.body.classList.remove("is-loading"));
 };
 
 document.addEventListener("DOMContentLoaded", init);
