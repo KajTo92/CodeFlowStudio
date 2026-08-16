@@ -1208,19 +1208,50 @@ body.loader-ready .page-loader {
 }
 
 .service-icon {
+  position: relative;
   display: grid;
   width: 46px;
   height: 46px;
   place-items: center;
-  border: 1px solid currentColor;
+  border: 1px solid rgba(18, 103, 110, 0.32);
   border-radius: 50%;
-  transition: background 0.35s ease, color 0.35s ease, transform 0.35s var(--ease-out);
+  color: #12676e;
+  background: rgba(102, 247, 255, 0.1);
+  transition: border-color 0.35s ease, background 0.35s ease, color 0.35s ease, transform 0.35s var(--ease-out);
+}
+
+.service-icon::before,
+.service-icon::after {
+  position: absolute;
+  content: "";
+}
+
+.service-icon::before {
+  width: 15px;
+  height: 1.5px;
+  background: currentColor;
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+
+.service-icon::after {
+  width: 7px;
+  height: 7px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  transform: translate(4px, -4px);
+  transition: transform 0.35s var(--ease-out);
 }
 
 .service-row:hover .service-icon {
   color: var(--ink);
-  background: var(--acid);
-  transform: rotate(45deg);
+  border-color: var(--cyan);
+  background: var(--cyan);
+  transform: scale(1.04);
+}
+
+.service-row:hover .service-icon::after {
+  transform: translate(6px, -6px);
 }
 
 .about-section {
