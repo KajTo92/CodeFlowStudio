@@ -406,7 +406,8 @@ canvas {
 .cinema-sticky {
   position: sticky;
   top: 0;
-  height: 100svh;
+  height: 100vh;
+  height: 100dvh;
   min-height: 640px;
   overflow: hidden;
   isolation: isolate;
@@ -1959,7 +1960,7 @@ body:not(.is-loading) .scroll-instrument {
   }
 
   .cinema-sticky {
-    min-height: 560px;
+    min-height: 0;
   }
 
   .cinema-media video {
