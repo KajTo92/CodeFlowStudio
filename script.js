@@ -53,7 +53,7 @@ const translations = {
       contact: "direct collaboration",
     },
     pricing: {
-      label: "Choose your orbit",
+      label: "Pricing",
       title: "Start focused.\nEvolve continuously.",
       copy: "Transparent starting points. The final scope is shaped around the result you need.",
       from: "from",
@@ -137,7 +137,7 @@ const translations = {
       contact: "direkte Zusammenarbeit",
     },
     pricing: {
-      label: "Wähle deinen Orbit",
+      label: "Preise",
       title: "Fokussiert starten.\nKontinuierlich wachsen.",
       copy: "Transparente Startpunkte. Der finale Umfang richtet sich nach dem Ergebnis, das du brauchst.",
       from: "ab",

@@ -1221,6 +1221,7 @@ canvas {
   position: relative;
   isolation: isolate;
   padding: 110px 0 150px;
+  color: var(--paper-bright);
 }
 
 .pricing-section::before {
@@ -1232,10 +1233,18 @@ canvas {
   width: 100vw;
   content: "";
   background:
-    linear-gradient(rgba(238, 234, 224, 0.64), rgba(238, 234, 224, 0.78)),
-    url("Media/bggoals.jpg") center / cover no-repeat;
+    linear-gradient(rgba(7, 11, 12, 0.58), rgba(7, 11, 12, 0.72)),
+    radial-gradient(circle at 12% 12%, rgba(102, 247, 255, 0.09), transparent 32%),
+    radial-gradient(circle at 88% 88%, rgba(141, 124, 255, 0.08), transparent 28%),
+    url("Media/bggoalsdark.jpg") center / cover no-repeat,
+    #070b0c;
   transform: translateX(-50%);
   pointer-events: none;
+}
+
+.pricing-section .section-index {
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.52);
 }
 
 .pricing-heading {
@@ -1249,7 +1258,7 @@ canvas {
 .pricing-heading p {
   max-width: 400px;
   margin: 0 0 8px;
-  color: #5f625e;
+  color: rgba(255, 255, 255, 0.56);
   font-size: 17px;
 }
 
@@ -1266,6 +1275,7 @@ canvas {
   display: flex;
   flex-direction: column;
   padding: clamp(26px, 3vw, 50px);
+  color: var(--ink);
   border: 1px solid rgba(5, 6, 6, 0.075);
   border-radius: 22px;
   background: rgba(249, 247, 241, 0.58);
