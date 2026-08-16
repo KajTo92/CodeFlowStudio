@@ -710,7 +710,7 @@ canvas {
 .manifesto {
   position: relative;
   width: 100%;
-  height: 375svh;
+  height: 330svh;
   min-height: 0;
   margin: 0;
   padding: 0;
@@ -817,12 +817,12 @@ canvas {
   position: absolute;
   inset: 0;
   display: grid;
-  grid-template-rows: 1.25fr 1fr 1.5fr;
+  grid-template-rows: 115svh 65svh 150svh;
   pointer-events: none;
 }
 
 .mission-scroll-steps span {
-  min-height: 100svh;
+  min-height: 0;
 }
 
 .manifesto.is-static {
