@@ -398,7 +398,7 @@ canvas {
 .scroll-cinema {
   position: relative;
   z-index: 1;
-  height: 370vh;
+  height: 420vh;
   color: var(--paper-bright);
   background: var(--ink);
 }
@@ -1956,7 +1956,7 @@ body:not(.is-loading) .scroll-instrument {
   }
 
   .scroll-cinema {
-    height: 330vh;
+    height: 470svh;
   }
 
   .cinema-sticky {

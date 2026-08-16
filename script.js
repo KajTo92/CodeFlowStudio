@@ -327,7 +327,7 @@ const initScrollCinema = () => {
   let rafId = 0;
   let duration = 0;
   let primed = false;
-  const getFinalHoldStart = () => mobileQuery.matches ? 0.74 : 0.8;
+  const getFinalHoldStart = () => mobileQuery.matches ? 0.78 : 0.82;
 
   const updateTarget = () => {
     const rect = section.getBoundingClientRect();
