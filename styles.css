@@ -414,6 +414,21 @@ canvas {
   background: #020303;
 }
 
+.cinema-sticky::after {
+  position: absolute;
+  z-index: 20;
+  inset: 0;
+  content: "";
+  background: var(--paper);
+  opacity: var(--hero-exit-fade, 0);
+  pointer-events: none;
+  will-change: opacity;
+}
+
+.hero-end-stop {
+  display: none;
+}
+
 .cinema-media {
   position: absolute;
   inset: 0;
@@ -1961,8 +1976,18 @@ body:not(.is-loading) .scroll-instrument {
 
   .scroll-cinema {
     height: 470svh;
-    scroll-snap-align: end;
+  }
+
+  .hero-end-stop {
+    position: absolute;
+    top: calc(92% - 92dvh);
+    left: 0;
+    width: 1px;
+    height: 1px;
+    display: block;
+    scroll-snap-align: start;
     scroll-snap-stop: always;
+    pointer-events: none;
   }
 
   .cinema-sticky {

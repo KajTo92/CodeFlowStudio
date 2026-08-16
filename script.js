@@ -342,6 +342,9 @@ const initScrollCinema = () => {
     const progress = clamp(renderedProgress);
     document.documentElement.style.setProperty("--hero-progress", progress.toFixed(4));
     document.documentElement.style.setProperty("--hero-video-scale", (1.03 + progress * 0.05).toFixed(4));
+    const exitProgress = prefersReducedMotion.matches ? 0 : clamp((progress - 0.93) / 0.07);
+    const exitFade = exitProgress * exitProgress * (3 - 2 * exitProgress);
+    document.documentElement.style.setProperty("--hero-exit-fade", exitFade.toFixed(4));
 
     beats.forEach((beat) => {
       const center = Number(beat.dataset.beatAt || 0);
