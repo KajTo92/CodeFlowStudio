@@ -469,7 +469,7 @@ body.loader-ready .page-loader {
 .scroll-cinema {
   position: relative;
   z-index: 1;
-  height: 420vh;
+  height: 470vh;
   color: var(--paper-bright);
   background: var(--ink);
 }
@@ -781,7 +781,7 @@ body.loader-ready .page-loader {
 .manifesto {
   position: relative;
   width: 100%;
-  height: 330svh;
+  height: 380svh;
   min-height: 0;
   margin: 0;
   padding: 0;
@@ -888,7 +888,7 @@ body.loader-ready .page-loader {
   position: absolute;
   inset: 0;
   display: grid;
-  grid-template-rows: 115svh 65svh 150svh;
+  grid-template-rows: 132svh 75svh 173svh;
   pointer-events: none;
 }
 
@@ -2081,6 +2081,14 @@ body:not(.is-loading) .scroll-instrument {
 
   .scroll-cinema {
     height: 470svh;
+  }
+
+  .manifesto {
+    height: 330svh;
+  }
+
+  .mission-scroll-steps {
+    grid-template-rows: 115svh 65svh 150svh;
   }
 
   .hero-end-stop {
