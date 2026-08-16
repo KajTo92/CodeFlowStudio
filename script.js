@@ -2,7 +2,7 @@ const translations = {
   en: {
     nav: { work: "Work", services: "Services", about: "About", contact: "Start a project" },
     hero: {
-      welcome: "Excited Websites?",
+      welcome: "Exciting Websites?",
       kicker: "Independent digital studio · Switzerland",
       titleOne: "Space",
       titleTwo: "Code",
