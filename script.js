@@ -368,7 +368,7 @@ const initScrollCinema = () => {
       const finalHoldStart = getFinalHoldStart();
       const videoProgress = clamp(progress / finalHoldStart);
       const targetTime = videoProgress * Math.max(duration - 0.05, 0);
-      const filmOpacity = 0.4 + clamp(targetTime) * 0.6;
+      const filmOpacity = clamp(targetTime);
       video.style.setProperty("--hero-film-opacity", filmOpacity.toFixed(3));
       const zoomIn = clamp((targetTime - 3) / 0.45);
       const zoomOut = clamp((6 - targetTime) / 0.8);
