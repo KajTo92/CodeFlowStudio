@@ -1,899 +1,655 @@
 const translations = {
   en: {
-    nav: {
-      portfolio: "Portfolio",
-      pricing: "Pricing",
-      process: "Process",
-      about: "About",
-      contact: "Contact",
-    },
+    nav: { work: "Work", services: "Services", about: "About", contact: "Start a project" },
     hero: {
-      eyebrow: "AI-native modern websites",
-      title: "Launch a breathtaking website faster than ever.",
-      lead: "Space Code Studio crafts ultra-modern web experiences that convert. Collaborate with me for a polished one-off build or an ongoing AI fueled iteration loop.",
-      ctaPrimary: "Start your project",
-      ctaSecondary: "View my work",
-      offerOne: "Launch-ready site from 499 CHF",
-      offerTwo: "Subscription from 59 CHF/month",
+      welcome: "Welcome to the new era\nof creating websites.",
+      kicker: "Independent digital studio · Switzerland",
+      titleOne: "Space",
+      titleTwo: "Code",
+      intro: "Websites that feel alive.",
+      beatTwoKicker: "Digital gravity / 02",
+      beatTwoTitle: "Built to hold attention.",
+      beatTwoCopy: "Precise motion, clear stories and experiences that feel alive.",
+      beatThreeKicker: "Ready for launch / 03",
+      beatThreeTitle: "Your next digital world starts here.",
+      explore: "Explore selected work",
     },
-    portfolio: {
-      eyebrow: "Selected work",
-      title: "Recent product launches.",
-      primeLane: "Premium Swiss transport service website with a polished brand presence and clear booking path.",
-      lovana: "Dating assistant app driven by AI designed to improve your dating experiences.",
-      teamvote: "Real-time decision platform for distributed teams featuring adaptive AI-driven insights.",
-      traislate: "Traislate.ai — Transcribe multilingual meetings and receive polished translations within seconds.",
-      spaceDrive: "Space Drive — an immersive automotive website with a futuristic visual direction and fast browsing flow.",
-      caseStudy: "Case study",
+    manifesto: {
+      label: "The mission",
+      titleOne: "The internet has enough templates.",
+      titleTwo: "We Create memorable places.",
+      copy: "Space Code combines human taste with AI-speed production to turn sharp ideas into fast, expressive websites.",
+      link: "Tell us what you are building",
+    },
+    work: {
+      label: "Selected orbit",
+      title: "Last few launches",
+      prime: "A premium booking experience for a Swiss transport service, shaped around trust and frictionless conversion.",
+      lovana: "An AI dating companion with a warm, playful identity and a product story that makes complex technology feel human.",
+      teamvote: "A real-time decision platform that turns distributed opinions into clear, shared momentum.",
+      traislate: "Multilingual meetings become polished transcripts and translations within seconds, not hours.",
+      drive: "A cinematic automotive concept that turns product discovery into a futuristic, high-speed experience.",
+      open: "Visit live site",
+      hint: "Scroll to explore the archive",
     },
     services: {
-      eyebrow: "What we build",
-      title: "Future-ready web experiences tailored to your goals.",
-      items: [
-        {
-          title: "Informational sites",
-          copy: "A beautifully designed home for your business with traffic analytics, lead forms, and fresh visual accents.",
-        },
-        {
-          title: "AI-powered experiences",
-          copy: "More complex sites that plug into the newest large language model APIs to deliver mind-blowing workflows.",
-        },
-        {
-          title: "E-commerce",
-          copy: "Launch a modern online shop with us faster than ever, complete with streamlined catalog management and checkout flows.",
-        },
-        {
-          title: "Integrations",
-          copy: "We implement any integration you need—from Stripe/PayPal payments to advanced databases that keep your site capable.",
-        },
-      ],
-    },
-    pricing: {
-      eyebrow: "Transparent pricing",
-      title: "Choose a launch or a living, breathing product relationship.",
-      projectBadge: "Project Launch",
-      projectTitle: "One-time build",
-      projectPrice: "from 499 CHF",
-      projectFeatures: [
-        "Tailored concept, UX, and UI crafted with AI co-pilots",
-        "Responsive, high-performing site ready to deploy within days",
-        "Analytics, SEO foundation, and accessibility baked in",
-      ],
-      projectCTA: "Reserve your slot",
-      subscriptionBadge: "Continuous Evolution",
-      subscriptionTitle: "Subscription",
-      subscriptionPrice: "from 59 CHF · monthly",
-      subscriptionFeatures: [
-        "Unlimited iterative updates and experiments",
-        "When website needs an constant updates and improvements, we are here for you.",
-        "Priority support, hosting guidance, and performance checks",
-      ],
-      subscriptionCTA: "Join the waitlist",
-    },
-    process: {
-      eyebrow: "How it works",
-      title: "From spark to shipping in three moves.",
-      steps: [
-        {
-          title: "Discovery + Preview",
-          copy: "Share your goals and aesthetic. Receive a complimentary AI-backed concept preview so you can feel the direction before committing.",
-        },
-        {
-          title: "Design + Build",
-          copy: "I orchestrate design systems, motion, and code in a modular stack ready for launch. Expect updates within fast iterations.",
-        },
-        {
-          title: "Launch + Iterate",
-          copy: "Deploy with confidence and keep evolving. AI insights drive improvements, and I stay on to iterate or hand over seamlessly.",
-        },
-      ],
+      label: "Capabilities",
+      kicker: "One studio. Full trajectory.",
+      title: "From first signal\nto final launch.",
+      strategyTitle: "Strategy & direction",
+      strategyCopy: "Positioning, content architecture and an unmistakable visual route before a line of code is written.",
+      designTitle: "Digital design & motion",
+      designCopy: "Responsive interfaces, art direction and purposeful 3D motion made to hold attention.",
+      buildTitle: "Creative development",
+      buildCopy: "Fast, accessible frontend builds, integrations, e-commerce and AI-native product experiences.",
     },
     about: {
-      eyebrow: "About me",
-      title: "Jan — crafting human experiences with precision.",
-      copy: [
-        "Jan'sites blends state-of-the-art automation with meticulous human taste to ship products that feel both futuristic and unmistakably personal.",
-        "I partner with founders, agencies, and teams that want to move fast without sacrificing craft. Let’s co-create something that feels alive.",
-      ],
-      stats: [
-        { label: "Projects shipped", value: "20+" },
-        { label: "AI automations deployed", value: "70+" },
-        { label: "Avg. turnaround", value: "7 days" },
-      ],
+      label: "The human in the loop",
+      kicker: "Small studio. Direct collaboration.",
+      title: "Technology moves fast.\nTaste still matters.",
+      copy: "I am Jan, designer, developer and the person answering your message. I use modern AI as an accelerator, never as a substitute for judgment, clarity and craft.",
+      projects: "projects shipped",
+      turnaround: "average first launch",
+      contact: "direct collaboration",
+    },
+    pricing: {
+      label: "Choose your orbit",
+      title: "Start focused.\nEvolve continuously.",
+      copy: "Transparent starting points. The final scope is shaped around the result you need.",
+      from: "from",
+      launchTitle: "One-time build",
+      launchOne: "Concept, UX and visual direction",
+      launchTwo: "Responsive, high-performance build",
+      launchThree: "SEO, analytics and launch support",
+      launchCta: "Reserve a launch",
+      evolveTitle: "Continuous evolution",
+      evolveOne: "Ongoing updates and experiments",
+      evolveTwo: "Priority support and improvements",
+      evolveThree: "Performance checks and guidance",
+      evolveCta: "Join the orbit",
     },
     contact: {
-      eyebrow: "Let’s build",
-      title: "Ready for a site that feels alive from the first scroll?",
-      copy: "Send a message with your idea, target audience, and timeline. I’ll respond within 24 hours with the free preview concept and next steps.",
-      calendar: "Book a discovery call",
-      form: {
-        name: "Name",
-        email: "Email",
-        message: "Message",
-        send: "Send message",
-        sending: "Sending...",
-        successTitle: "Message sent!",
-        successMessage: "Thank you for reaching out. I'll get back to you within 24 hours with ideas for your project.",
-        errorTitle: "Something went wrong",
-        errorMessage: "Your message couldn't be sent. Please try again or contact me directly at jan@spacecode.ch",
-        closeBtn: "Got it",
-      },
+      kicker: "Transmission open",
+      titleOne: "Have an idea?",
+      titleTwo: "Send the signal.",
+      copy: "Tell me what you are building, for whom and when it needs to launch. I will reply within 24 hours.",
+      name: "Your name",
+      email: "Email address",
+      message: "Project signal",
+      send: "Transmit message",
+      sending: "Transmitting...",
+      success: "Signal received. I will reply within 24 hours.",
+      error: "Transmission failed. Please email jan@spacecode.ch directly.",
     },
-    footer: {
-      copy: "© Space Code Studio by Jan. Built with passion and AI.",
-      backToTop: "Back to top",
-    },
+    footer: { top: "Back to top" },
   },
   de: {
-    nav: {
-      portfolio: "Portfolio",
-      pricing: "Preise",
-      process: "Ablauf",
-      about: "Über mich",
-      contact: "Kontakt",
-    },
+    nav: { work: "Projekte", services: "Leistungen", about: "Über mich", contact: "Projekt starten" },
     hero: {
-      eyebrow: "AI-native moderne Websites",
-      title: "Starte eine atemberaubende Website schneller als je zuvor.",
-      lead: "Space Code Studio erschafft ultra-moderne Web-Erlebnisse, die konvertieren. Arbeite mit mir für einen glänzenden Einzelauftrag oder einen laufenden AI-gestützten Iterationszyklus.",
-      ctaPrimary: "Starte dein Projekt",
-      ctaSecondary: "Meine Arbeiten ansehen",
-      offerOne: "Launch-fertige Website ab 499 CHF",
-      offerTwo: "Abo ab 59 CHF pro Monat",
+      welcome: "Willkommen in einer neuen Ära\nder Website-Gestaltung.",
+      kicker: "Unabhängiges Digitalstudio · Schweiz",
+      titleOne: "Space",
+      titleTwo: "Code",
+      intro: "Websites, die lebendig wirken.",
+      beatTwoKicker: "Digitale Gravitation / 02",
+      beatTwoTitle: "Gebaut für Aufmerksamkeit.",
+      beatTwoCopy: "Präzise Bewegung, klare Geschichten und Erlebnisse, die lebendig wirken.",
+      beatThreeKicker: "Bereit zum Start / 03",
+      beatThreeTitle: "Deine nächste digitale Welt beginnt hier.",
+      explore: "Ausgewählte Projekte entdecken",
     },
-    portfolio: {
-      eyebrow: "Ausgewählte Arbeiten",
-      title: "Aktuelle Produktlaunches.",
-      primeLane: "Premium-Website für Schweizer Transportservices mit hochwertigem Markenauftritt und klarem Buchungsweg.",
-      lovana: "Dating-Assistenten-App von AI angetrieben, entwickelt um deine Dating-Erfahrungen zu verbessern.",
-      teamvote: "Echtzeit-Entscheidungsplattform für verteilte Teams mit adaptiven, AI-gesteuerten Insights.",
-      traislate: "Traislate.ai — Transkribiere mehrsprachige Meetings und erhalte innerhalb von Sekunden ausgefeilte Übersetzungen.",
-      spaceDrive: "Space Drive — immersive Automotive-Website mit futuristischer Bildsprache und schneller Nutzerführung.",
-      caseStudy: "Case Study",
+    manifesto: {
+      label: "Die Mission",
+      titleOne: "Das Internet hat genug Templates.",
+      titleTwo: "Wir schaffen Orte, die bleiben.",
+      copy: "Space Code verbindet menschlichen Geschmack mit AI-Tempo und macht aus klaren Ideen schnelle, ausdrucksstarke Websites.",
+      link: "Erzähl uns, was du aufbaust",
+    },
+    work: {
+      label: "Ausgewählte Umlaufbahn",
+      title: "Letzte Launches.",
+      prime: "Ein hochwertiges Buchungserlebnis für einen Schweizer Transportservice, ausgerichtet auf Vertrauen und reibungslose Conversion.",
+      lovana: "Ein AI-Dating-Begleiter mit warmer, spielerischer Identität, der komplexe Technologie menschlich wirken lässt.",
+      teamvote: "Eine Echtzeit-Plattform, die verteilte Meinungen in klare, gemeinsame Entscheidungen verwandelt.",
+      traislate: "Mehrsprachige Meetings werden in Sekunden zu sauberen Transkripten und Übersetzungen, nicht erst in Stunden.",
+      drive: "Ein cineastisches Automotive-Konzept, das Produktentdeckung in ein futuristisches High-Speed-Erlebnis verwandelt.",
+      open: "Live-Website besuchen",
+      hint: "Scrollen, um das Archiv zu entdecken",
     },
     services: {
-      eyebrow: "Was wir bauen",
-      title: "Zukunftssichere Web-Erlebnisse, maßgeschneidert für deine Ziele.",
-      items: [
-        {
-          title: "Informationsseiten",
-          copy: "Ein wunderschön gestaltetes Zuhause für dein Business mit Traffic-Analytics, Lead-Formularen und frischen visuellen Akzenten.",
-        },
-        {
-          title: "AI-basierte Experiences",
-          copy: "Komplexere Seiten, die sich in die neuesten Large-Language-Model-APIs einklinken, um atemberaubende Workflows zu liefern.",
-        },
-        {
-          title: "E-Commerce",
-          copy: "Starte mit uns schneller als je zuvor einen modernen Online-Shop, komplett mit optimiertem Katalog-Management und Checkout-Flows.",
-        },
-        {
-          title: "Integrationen",
-          copy: "Wir implementieren jede benötigte Integration – von Stripe/PayPal-Zahlungen bis zu fortschrittlichen Datenbanken, die deine Seite leistungsfähig halten.",
-        },
-      ],
-    },
-    pricing: {
-      eyebrow: "Transparente Preise",
-      title: "Wähle einen Launch oder eine lebendige, atmende Produktbeziehung.",
-      projectBadge: "Projekt Launch",
-      projectTitle: "Einmalige Umsetzung",
-      projectPrice: "ab 499 CHF ",
-      projectFeatures: [
-        "Maßgeschneidertes Konzept, UX und UI, entwickelt mit AI-Co-Piloten",
-        "Responsive, hochperformante Website, bereit zum Deployment innerhalb weniger Tage",
-        "Analytics, SEO-Fundament und Barrierefreiheit inklusive",
-      ],
-      projectCTA: "Slot reservieren",
-      subscriptionBadge: "Kontinuierliche Evolution",
-      subscriptionTitle: "Subscription",
-      subscriptionPrice: "ab 59 CHF · monatlich",
-      subscriptionFeatures: [
-        "Unlimitierte iterative Updates und Experimente",
-        "Wenn deine Website konstante Updates und Verbesserungen benötigt, sind wir für dich da.",
-        "Priorisierter Support, Hosting-Beratung und Performance-Checks",
-      ],
-      subscriptionCTA: "Auf Warteliste setzen",
-    },
-    process: {
-      eyebrow: "So läuft es",
-      title: "Von der Idee zum Launch in drei Phasen.",
-      steps: [
-        {
-          title: "Discovery + Preview",
-          copy: "Teile deine Ziele und Ästhetik. Erhalte eine kostenlose, AI-gestützte Konzept-Vorschau, damit du die Richtung spüren kannst, bevor du dich verpflichtest.",
-        },
-        {
-          title: "Design + Build",
-          copy: "Ich komponiere Designsysteme, Motion und Code in einem modularen Stack – launchbereit in schnellen Iterationen.",
-        },
-        {
-          title: "Launch + Iterate",
-          copy: "Starte mit Sicherheit und entwickle weiter. AI-Insights treiben Optimierungen, und ich bleibe für Iterationen oder Handover an Bord.",
-        },
-      ],
+      label: "Leistungen",
+      kicker: "Ein Studio. Die ganze Flugbahn.",
+      title: "Vom ersten Signal\nbis zum finalen Launch.",
+      strategyTitle: "Strategie & Richtung",
+      strategyCopy: "Positionierung, Content-Architektur und eine unverwechselbare visuelle Route, bevor die erste Codezeile entsteht.",
+      designTitle: "Digital Design & Motion",
+      designCopy: "Responsive Interfaces, Art Direction und gezielte 3D-Bewegung, die Aufmerksamkeit hält.",
+      buildTitle: "Creative Development",
+      buildCopy: "Schnelle, barrierearme Frontends, Integrationen, E-Commerce und AI-native Produkterlebnisse.",
     },
     about: {
-      eyebrow: "Über mich",
-      title: "Jan — menschliche Erlebnisse mit Präzision gestalten.",
-      copy: [
-        "Jan'sites verbindet modernste Automatisierung mit sorgfältigem menschlichem Geschmack, um Produkte zu liefern, die sich sowohl futuristisch als auch unverkennbar persönlich anfühlen.",
-        "Ich arbeite mit Gründern, Agenturen und Teams zusammen, die schnell vorankommen wollen, ohne auf Handwerkskunst zu verzichten. Lass uns gemeinsam etwas erschaffen, das sich lebendig anfühlt.",
-      ],
-      stats: [
-        { label: "Umgesetzte Projekte", value: "20+" },
-        { label: "AI-Automationen im Einsatz", value: "70+" },
-        { label: "Ø Durchlaufzeit", value: "7 Tage" },
-      ],
+      label: "Der Mensch im Loop",
+      kicker: "Kleines Studio. Direkte Zusammenarbeit.",
+      title: "Technologie bewegt sich schnell.\nGeschmack bleibt entscheidend.",
+      copy: "Ich bin Jan, Designer, Entwickler und die Person, die deine Nachricht beantwortet. AI ist für mich ein Beschleuniger, kein Ersatz für Urteilskraft, Klarheit und Handwerk.",
+      projects: "realisierte Projekte",
+      turnaround: "bis zum ersten Launch",
+      contact: "direkte Zusammenarbeit",
+    },
+    pricing: {
+      label: "Wähle deinen Orbit",
+      title: "Fokussiert starten.\nKontinuierlich wachsen.",
+      copy: "Transparente Startpunkte. Der finale Umfang richtet sich nach dem Ergebnis, das du brauchst.",
+      from: "ab",
+      launchTitle: "Einmalige Umsetzung",
+      launchOne: "Konzept, UX und visuelle Richtung",
+      launchTwo: "Responsive High-Performance-Umsetzung",
+      launchThree: "SEO, Analytics und Launch-Support",
+      launchCta: "Launch reservieren",
+      evolveTitle: "Kontinuierliche Evolution",
+      evolveOne: "Laufende Updates und Experimente",
+      evolveTwo: "Priorisierter Support und Verbesserungen",
+      evolveThree: "Performance-Checks und Beratung",
+      evolveCta: "Orbit beitreten",
     },
     contact: {
-      eyebrow: "Lass uns bauen",
-      title: "Bereit für eine Website, die sich vom ersten Scroll an lebendig anfühlt?",
-      copy: "Sende eine Nachricht mit deiner Idee, Zielgruppe und Zeitplan. Ich melde mich innerhalb von 24 Stunden mit dem kostenlosen Konzept-Preview und den nächsten Schritten.",
-      calendar: "Discovery-Call buchen",
-      form: {
-        name: "Name",
-        email: "E-Mail",
-        message: "Nachricht",
-        send: "Nachricht senden",
-        sending: "Wird gesendet...",
-        successTitle: "Nachricht gesendet!",
-        successMessage: "Vielen Dank für deine Nachricht. Ich melde mich innerhalb von 24 Stunden mit Ideen für dein Projekt bei dir.",
-        errorTitle: "Etwas ist schiefgelaufen",
-        errorMessage: "Deine Nachricht konnte nicht gesendet werden. Bitte versuche es erneut oder kontaktiere mich direkt unter jan@spacecode.ch",
-        closeBtn: "Verstanden",
-      },
+      kicker: "Übertragung offen",
+      titleOne: "Eine Idee?",
+      titleTwo: "Sende das Signal.",
+      copy: "Erzähl mir, was du baust, für wen und wann es starten soll. Ich antworte innerhalb von 24 Stunden.",
+      name: "Dein Name",
+      email: "E-Mail-Adresse",
+      message: "Projektsignal",
+      send: "Nachricht senden",
+      sending: "Wird übertragen...",
+      success: "Signal empfangen. Ich antworte innerhalb von 24 Stunden.",
+      error: "Übertragung fehlgeschlagen. Bitte schreibe direkt an jan@spacecode.ch.",
     },
-    footer: {
-      copy: "© Space Code Studio von Jan. Mit Leidenschaft und AI gebaut.",
-      backToTop: "Zurück nach oben",
-    },
+    footer: { top: "Nach oben" },
   },
 };
 
-const getMediaQuery = (query) => {
-  if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
-    return null;
+const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
+const lerp = (from, to, amount) => from + (to - from) * amount;
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const mobileQuery = window.matchMedia("(max-width: 860px)");
+
+let currentLanguage = "en";
+
+const getTranslation = (key, language = currentLanguage) =>
+  key.split(".").reduce((value, part) => value?.[part], translations[language]);
+
+const applyTranslations = (language) => {
+  currentLanguage = translations[language] ? language : "en";
+  document.documentElement.lang = currentLanguage;
+
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const value = getTranslation(element.dataset.i18n);
+    if (typeof value !== "string") return;
+    const normalized = value.replace(/\n/g, "\n");
+    if (normalized.includes("\n")) {
+      const [first, ...rest] = normalized.split("\n");
+      element.replaceChildren(document.createTextNode(first), document.createElement("br"), document.createTextNode(rest.join(" ")));
+      return;
+    }
+    element.textContent = normalized;
+  });
+
+  document.querySelectorAll("[data-lang]").forEach((button) => {
+    const active = button.dataset.lang === currentLanguage;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+
+  try {
+    localStorage.setItem("spacecode-language", currentLanguage);
+  } catch (_) {
+    // Storage can be unavailable in private browsing; the switch still works.
   }
-  return window.matchMedia(query);
 };
 
-const subscribeToMediaQuery = (mediaQuery, handler) => {
-  if (!mediaQuery || typeof handler !== "function") return;
-  if (typeof mediaQuery.addEventListener === "function") {
-    mediaQuery.addEventListener("change", handler);
-  } else if (typeof mediaQuery.addListener === "function") {
-    mediaQuery.addListener(handler);
+const initLanguage = () => {
+  let storedLanguage = "en";
+  try {
+    storedLanguage = localStorage.getItem("spacecode-language") || "en";
+  } catch (_) {
+    storedLanguage = "en";
   }
-};
+  applyTranslations(storedLanguage);
 
-const isLowPowerDevice = () => {
-  if (typeof navigator === "undefined") return false;
-  const memory = navigator.deviceMemory || 8;
-  const cores = navigator.hardwareConcurrency || 8;
-  return memory <= 4 || cores <= 4;
-};
-
-const setActiveLanguage = (lang) => {
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const key = el.dataset.i18n;
-    const value = getTranslation(key, lang);
-    if (typeof value === "string") {
-      el.textContent = value;
-    }
+  document.querySelectorAll("[data-lang]").forEach((button) => {
+    button.addEventListener("click", () => applyTranslations(button.dataset.lang));
   });
 };
 
-const getTranslation = (key, lang) => {
-  return key.split(".").reduce((acc, part) => {
-    if (acc && Object.prototype.hasOwnProperty.call(acc, part)) {
-      return acc[part];
-    }
-    return null;
-  }, translations[lang]);
-};
-
-const initLanguageSwitcher = () => {
-  const buttons = document.querySelectorAll(".lang-button");
-  let currentLang = "en";
-  setActiveLanguage(currentLang);
-
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const lang = btn.dataset.lang;
-      if (!lang || lang === currentLang) return;
-      currentLang = lang;
-      buttons.forEach((button) => button.classList.toggle("is-active", button.dataset.lang === lang));
-      setActiveLanguage(lang);
-    });
-  });
-};
-
-const initRevealObserver = () => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.2,
-    },
-  );
-
-  document.querySelectorAll(".section").forEach((section) => observer.observe(section));
-};
-
-const initConstellation = () => {
-  const canvas = document.getElementById("constellation");
-  if (!canvas) return null;
-  const ctx = canvas.getContext("2d");
-  if (!ctx) return null;
-  const lowPowerDevice = isLowPowerDevice();
-
-  const config = {
-    minParticles: lowPowerDevice ? 10 : 18,
-    maxParticles: lowPowerDevice ? 28 : 42,
-    frameInterval: 1000 / (lowPowerDevice ? 24 : 30),
-    linkDistance: lowPowerDevice ? 82 : 100,
-    pointerDistance: lowPowerDevice ? 110 : 140,
-    pointerInfluence: lowPowerDevice ? 95 : 120,
-  };
-
-  const pointer = { x: 0, y: 0, active: false };
-  const pointerMediaQuery = getMediaQuery("(pointer: fine)");
-  let pointerEnabled = pointerMediaQuery ? pointerMediaQuery.matches : true;
-
-  const particles = [];
-  const dimensions = { width: window.innerWidth, height: window.innerHeight };
-  let animationFrameId = null;
-  let lastFrameTime = 0;
-  let reduceMotion = false;
-
-  const debounce = (fn, delay = 150) => {
-    let timeoutId;
-    return (...args) => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => fn(...args), delay);
-    };
-  };
-
-  const resize = () => {
-    dimensions.width = window.innerWidth;
-    dimensions.height = window.innerHeight;
-    canvas.width = dimensions.width;
-    canvas.height = dimensions.height;
-  };
-
-  const particleTarget = () => {
-    const area = dimensions.width * dimensions.height;
-    const normalized = Math.round(area / 28000);
-    return Math.max(config.minParticles, Math.min(config.maxParticles, normalized));
-  };
-
-  const createParticle = () => ({
-    x: Math.random() * dimensions.width,
-    y: Math.random() * dimensions.height,
-    vx: (Math.random() - 0.5) * 0.25,
-    vy: (Math.random() - 0.5) * 0.25,
-    radius: Math.random() * 1.6 + 0.4,
-  });
-
-  const syncParticles = () => {
-    const target = particleTarget();
-    if (particles.length < target) {
-      const deficit = target - particles.length;
-      for (let i = 0; i < deficit; i += 1) {
-        particles.push(createParticle());
-      }
-    } else if (particles.length > target) {
-      particles.splice(target);
-    }
-  };
-
-  const updateParticles = () => {
-    particles.forEach((p) => {
-      p.x += p.vx;
-      p.y += p.vy;
-
-      if (p.x <= 0 || p.x >= dimensions.width) {
-        p.vx *= -1;
-      }
-      if (p.y <= 0 || p.y >= dimensions.height) {
-        p.vy *= -1;
-      }
-
-      if (pointer.active) {
-        const dx = p.x - pointer.x;
-        const dy = p.y - pointer.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < config.pointerInfluence && dist > 0) {
-          const force = (config.pointerInfluence - dist) / config.pointerInfluence;
-          p.vx += (dx / dist) * force * 0.02;
-          p.vy += (dy / dist) * force * 0.02;
-        }
-      }
-    });
-  };
-
-  const drawParticles = () => {
-    ctx.clearRect(0, 0, dimensions.width, dimensions.height);
-    particles.forEach((p) => {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(140,255,215,0.5)";
-      ctx.fill();
-    });
-
-    for (let i = 0; i < particles.length; i += 1) {
-      const p1 = particles[i];
-      for (let j = i + 1; j < particles.length; j += 1) {
-        const p2 = particles[j];
-        const dx = p1.x - p2.x;
-        if (Math.abs(dx) > config.linkDistance) continue;
-        const dy = p1.y - p2.y;
-        if (Math.abs(dy) > config.linkDistance) continue;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < config.linkDistance) {
-          const opacity = 1 - dist / config.linkDistance;
-          ctx.strokeStyle = `rgba(91,141,255,${opacity * 0.3})`;
-          ctx.lineWidth = 0.8;
-          ctx.beginPath();
-          ctx.moveTo(p1.x, p1.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.stroke();
-        }
-      }
-    }
-
-    if (pointer.active && pointerEnabled) {
-      particles.forEach((p) => {
-        const dx = p.x - pointer.x;
-        if (Math.abs(dx) > config.pointerDistance) return;
-        const dy = p.y - pointer.y;
-        if (Math.abs(dy) > config.pointerDistance) return;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < config.pointerDistance) {
-          const opacity = 1 - dist / config.pointerDistance;
-          ctx.strokeStyle = `rgba(255,106,206,${opacity * 0.5})`;
-          ctx.lineWidth = 0.8;
-          ctx.beginPath();
-          ctx.moveTo(pointer.x, pointer.y);
-          ctx.lineTo(p.x, p.y);
-          ctx.stroke();
-        }
-      });
-    }
-  };
-
-  const loop = (timestamp = 0) => {
-    if (reduceMotion) return;
-    if (timestamp - lastFrameTime >= config.frameInterval) {
-      lastFrameTime = timestamp;
-      updateParticles();
-      drawParticles();
-    }
-    animationFrameId = requestAnimationFrame(loop);
-  };
-
-  const start = () => {
-    if (animationFrameId || reduceMotion) return;
-    lastFrameTime = 0;
-    animationFrameId = requestAnimationFrame(loop);
-  };
-
-  const stop = () => {
-    if (!animationFrameId) return;
-    cancelAnimationFrame(animationFrameId);
-    animationFrameId = null;
-  };
-
-  const setReducedMotion = (value) => {
-    reduceMotion = value;
-    if (reduceMotion) {
-      stop();
-      ctx.clearRect(0, 0, dimensions.width, dimensions.height);
-    } else {
-      start();
-    }
-  };
-
-  resize();
-  syncParticles();
-  start();
-
-  const handleResize = debounce(() => {
-    resize();
-    syncParticles();
-  }, 180);
-  window.addEventListener("resize", handleResize);
-
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      stop();
-    } else if (!reduceMotion) {
-      start();
-    }
-  });
-
-  if (pointerMediaQuery) {
-    subscribeToMediaQuery(pointerMediaQuery, (event) => {
-      pointerEnabled = event.matches;
-      if (!pointerEnabled) {
-        pointer.active = false;
-      }
-    });
-  }
-
-  const handlePointerMove = (event) => {
-    if (!pointerEnabled) return;
-    pointer.x = event.clientX;
-    pointer.y = event.clientY;
-    pointer.active = true;
-  };
-
-  const handlePointerLeave = () => {
-    pointer.active = false;
-  };
-
-  window.addEventListener("mousemove", handlePointerMove, { passive: true });
-  window.addEventListener("mouseleave", handlePointerLeave);
-
-  return {
-    setReducedMotion,
-  };
-};
-
-const initLazyPortfolioFrames = () => {
-  const frames = Array.from(document.querySelectorAll(".monitor-screen iframe[data-src]"));
-  if (!frames.length) return;
-
-  const loadFrame = (frame) => {
-    if (frame.dataset.loaded === "true") return;
-    const src = frame.dataset.src;
-    if (!src) return;
-    frame.dataset.loaded = "true";
-    frame.addEventListener(
-      "load",
-      () => {
-        frame.closest(".monitor-screen")?.classList.add("is-loaded");
-      },
-      { once: true },
-    );
-    frame.src = src;
-  };
-
-  if (typeof IntersectionObserver !== "function") {
-    frames.forEach(loadFrame);
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        window.setTimeout(() => loadFrame(entry.target), Number(entry.target.dataset.loadDelay) || 0);
-        observer.unobserve(entry.target);
-      });
-    },
-    {
-      rootMargin: "650px 0px",
-      threshold: 0.01,
-    },
-  );
-
-  frames.forEach((frame, index) => {
-    frame.dataset.loadDelay = String(index * 220);
-    observer.observe(frame);
-  });
-};
-
-const initBackgroundVideo = () => {
-  const video = document.getElementById("background-video");
-  const wrapper = video?.closest(".video-background");
-  if (!video || !wrapper) return null;
-
-  const fadeDuration = 1400;
-  let restartTimeout = null;
-  let revealTimeout = null;
-  let isFading = false;
-  let reduceMotion = false;
-
-  const play = () => {
-    if (reduceMotion) return;
-    const playPromise = video.play();
-    if (playPromise && typeof playPromise.catch === "function") {
-      playPromise.catch(() => {
-        wrapper.classList.add("is-fading");
-      });
-    }
-  };
-
-  const clearTimers = () => {
-    if (restartTimeout) {
-      clearTimeout(restartTimeout);
-      restartTimeout = null;
-    }
-    if (revealTimeout) {
-      clearTimeout(revealTimeout);
-      revealTimeout = null;
-    }
-  };
-
-  const fadeAndRestart = () => {
-    if (isFading || reduceMotion) return;
-    isFading = true;
-    wrapper.classList.add("is-fading");
-
-    restartTimeout = setTimeout(() => {
-      video.currentTime = 0;
-      play();
-      revealTimeout = setTimeout(() => {
-        wrapper.classList.remove("is-fading");
-        isFading = false;
-      }, Math.round(fadeDuration * 0.55));
-    }, fadeDuration);
-  };
-
-  video.addEventListener("loadedmetadata", () => {
-    video.currentTime = 0;
-    play();
-  });
-
-  video.addEventListener("timeupdate", () => {
-    if (!Number.isFinite(video.duration) || video.duration <= 0) return;
-    if (video.duration - video.currentTime <= fadeDuration / 1000) {
-      fadeAndRestart();
-    }
-  });
-
-  video.addEventListener("ended", fadeAndRestart);
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      video.pause();
-    } else {
-      play();
-    }
-  });
-  play();
-
-  return {
-    setReducedMotion(value) {
-      reduceMotion = value;
-      clearTimers();
-      isFading = false;
-      wrapper.classList.toggle("is-fading", !!value);
-      if (reduceMotion) {
-        video.pause();
-      } else {
-        play();
-      }
-    },
-  };
-};
-
-const initNavigationToggle = () => {
-  const toggle = document.querySelector(".nav-toggle");
-  const navWrapper = document.querySelector(".nav-wrapper");
-  if (!toggle || !navWrapper) return;
-
-  const navLinks = navWrapper.querySelectorAll(".nav a");
-  const isMobile = () => window.innerWidth <= 1024;
+const initHeader = () => {
+  const header = document.querySelector("[data-header]");
+  const toggle = document.querySelector(".menu-toggle");
+  const panel = document.querySelector(".header-panel");
+  if (!header || !toggle || !panel) return;
 
   const closeMenu = () => {
-    document.body.classList.remove("nav-open");
+    document.body.classList.remove("menu-open");
     toggle.setAttribute("aria-expanded", "false");
-    if (isMobile()) {
-      navWrapper.setAttribute("aria-hidden", "true");
-    } else {
-      navWrapper.removeAttribute("aria-hidden");
-    }
-  };
-
-  const openMenu = () => {
-    document.body.classList.add("nav-open");
-    toggle.setAttribute("aria-expanded", "true");
-    if (isMobile()) {
-      navWrapper.setAttribute("aria-hidden", "false");
-    }
   };
 
   toggle.addEventListener("click", () => {
-    if (document.body.classList.contains("nav-open")) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
+    const open = document.body.classList.toggle("menu-open");
+    toggle.setAttribute("aria-expanded", String(open));
   });
 
-  document.addEventListener("click", (event) => {
-    const target = event.target;
-    if (
-      !isMobile() ||
-      !document.body.classList.contains("nav-open") ||
-      !(target instanceof Node) ||
-      navWrapper.contains(target) ||
-      toggle.contains(target)
-    ) {
+  panel.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+  });
+
+  let ticking = false;
+  const update = () => {
+    header.classList.toggle("is-compact", window.scrollY > 24);
+    ticking = false;
+  };
+  window.addEventListener("scroll", () => {
+    if (!ticking) requestAnimationFrame(update);
+    ticking = true;
+  }, { passive: true });
+  update();
+};
+
+const initStarfield = () => {
+  const canvas = document.getElementById("starfield");
+  const context = canvas?.getContext("2d");
+  if (!canvas || !context) return;
+
+  let resizeTimer;
+  const seededRandom = (index) => {
+    const value = Math.sin(index * 947.271 + 83.19) * 43758.5453;
+    return value - Math.floor(value);
+  };
+
+  const draw = () => {
+    const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    canvas.width = Math.floor(width * ratio);
+    canvas.height = Math.floor(height * ratio);
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    context.setTransform(ratio, 0, 0, ratio, 0, 0);
+    context.clearRect(0, 0, width, height);
+
+    const count = width < 700 ? 54 : 105;
+    for (let index = 0; index < count; index += 1) {
+      const x = seededRandom(index * 3 + 1) * width;
+      const y = seededRandom(index * 3 + 2) * height;
+      const radius = seededRandom(index * 3 + 3) * 1.25 + 0.25;
+      const alpha = seededRandom(index * 7 + 2) * 0.55 + 0.16;
+      context.beginPath();
+      context.arc(x, y, radius, 0, Math.PI * 2);
+      context.fillStyle = `rgba(238, 246, 240, ${alpha})`;
+      context.fill();
+    }
+  };
+
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(draw, 180);
+  }, { passive: true });
+  draw();
+};
+
+const initPointerParallax = () => {
+  if (!window.matchMedia("(pointer: fine)").matches || prefersReducedMotion.matches) return;
+  let nextX = 0;
+  let nextY = 0;
+  let frame = 0;
+
+  const render = () => {
+    document.documentElement.style.setProperty("--pointer-x", nextX.toFixed(3));
+    document.documentElement.style.setProperty("--pointer-y", nextY.toFixed(3));
+    frame = 0;
+  };
+
+  window.addEventListener("pointermove", (event) => {
+    nextX = event.clientX / window.innerWidth - 0.5;
+    nextY = event.clientY / window.innerHeight - 0.5;
+    if (!frame) frame = requestAnimationFrame(render);
+  }, { passive: true });
+};
+
+const initScrollCinema = () => {
+  const section = document.querySelector("[data-scroll-cinema]");
+  const video = document.getElementById("hero-film");
+  const beats = Array.from(document.querySelectorAll("[data-hero-beat]"));
+  if (!section || !video || !beats.length) return;
+
+  let targetProgress = 0;
+  let renderedProgress = -1;
+  let rafId = 0;
+  let duration = 0;
+  let primed = false;
+  const finalHoldStart = 0.86;
+
+  const updateTarget = () => {
+    const rect = section.getBoundingClientRect();
+    const distance = Math.max(section.offsetHeight - window.innerHeight, 1);
+    targetProgress = clamp(-rect.top / distance);
+    if (!rafId) rafId = requestAnimationFrame(render);
+  };
+
+  const render = () => {
+    const smoothing = prefersReducedMotion.matches ? 1 : 0.14;
+    renderedProgress = renderedProgress < 0 ? targetProgress : lerp(renderedProgress, targetProgress, smoothing);
+    const progress = clamp(renderedProgress);
+    document.documentElement.style.setProperty("--hero-progress", progress.toFixed(4));
+    document.documentElement.style.setProperty("--hero-video-scale", (1.03 + progress * 0.05).toFixed(4));
+
+    beats.forEach((beat) => {
+      const center = Number(beat.dataset.beatAt || 0);
+      const distance = Math.abs(progress - center);
+      const isReveal = beat.classList.contains("hero-beat--reveal");
+      const range = beat.classList.contains("hero-beat--welcome")
+        ? 0.22
+        : isReveal
+          ? 0.2
+          : 0.24;
+      const opacity = isReveal
+        ? clamp((progress - (center - range)) / range)
+        : clamp(1 - distance / range);
+      const beatProgress = isReveal ? Math.min(progress, center) : progress;
+      const shift = clamp((center - beatProgress) * 250, -72, 72);
+      const scale = 0.975 + opacity * 0.025;
+      beat.style.setProperty("--beat-opacity", opacity.toFixed(3));
+      beat.style.setProperty("--beat-shift", `${shift.toFixed(2)}px`);
+      beat.style.setProperty("--beat-scale", scale.toFixed(4));
+      beat.classList.toggle("is-interactive", opacity > 0.62);
+    });
+
+    if (duration > 0 && !prefersReducedMotion.matches) {
+      const videoProgress = clamp(progress / finalHoldStart);
+      const targetTime = videoProgress * Math.max(duration - 0.05, 0);
+      const filmOpacity = 0.4 + clamp(targetTime) * 0.6;
+      video.style.setProperty("--hero-film-opacity", filmOpacity.toFixed(3));
+      const zoomIn = clamp((targetTime - 3) / 0.45);
+      const zoomOut = clamp((6 - targetTime) / 0.8);
+      const sceneShift = Math.min(zoomIn, zoomOut);
+      const mobileSceneZoom = sceneShift * 0.08;
+      const mobileScenePan = sceneShift * 34;
+      video.style.setProperty("--mobile-scene-zoom", mobileSceneZoom.toFixed(4));
+      video.style.setProperty("--mobile-scene-pan", `${mobileScenePan.toFixed(2)}%`);
+      if (Math.abs(video.currentTime - targetTime) > 0.035) {
+        try {
+          video.currentTime = targetTime;
+        } catch (_) {
+          // Some mobile browsers delay seeking until the media is primed.
+        }
+      }
+    }
+
+    if (prefersReducedMotion.matches) {
+      video.style.setProperty("--hero-film-opacity", "1");
+    }
+
+    if (Math.abs(renderedProgress - targetProgress) > 0.001) {
+      rafId = requestAnimationFrame(render);
+    } else {
+      renderedProgress = targetProgress;
+      rafId = 0;
+    }
+  };
+
+  const setDuration = () => {
+    duration = Number.isFinite(video.duration) ? video.duration : 0;
+    video.pause();
+    updateTarget();
+  };
+
+  const primeVideo = () => {
+    if (primed) return;
+    primed = true;
+    const promise = video.play();
+    if (promise && typeof promise.then === "function") {
+      promise.then(() => video.pause()).catch(() => {});
+    }
+  };
+
+  video.addEventListener("loadedmetadata", setDuration, { once: true });
+  if (video.readyState >= 1) setDuration();
+  window.addEventListener("scroll", updateTarget, { passive: true });
+  window.addEventListener("resize", updateTarget, { passive: true });
+  window.addEventListener("touchstart", primeVideo, { once: true, passive: true });
+  window.addEventListener("wheel", primeVideo, { once: true, passive: true });
+  updateTarget();
+};
+
+const initMissionScroll = () => {
+  const section = document.querySelector("[data-mission-scroll]");
+  const scenes = Array.from(section?.querySelectorAll("[data-mission-scene]") || []);
+  const steps = Array.from(section?.querySelectorAll("[data-mission-step]") || []);
+  if (!section || !scenes.length || scenes.length !== steps.length) return;
+
+  const activateScene = (activeIndex) => {
+    scenes.forEach((scene, index) => {
+      const isActive = index === activeIndex;
+      scene.classList.toggle("is-active", isActive);
+      scene.classList.toggle("is-before", index < activeIndex);
+      scene.toggleAttribute("inert", !isActive);
+      scene.setAttribute("aria-hidden", String(!isActive));
+    });
+  };
+
+  activateScene(0);
+
+  if (prefersReducedMotion.matches || !("IntersectionObserver" in window)) {
+    section.classList.add("is-static");
+    scenes.forEach((scene) => {
+      scene.removeAttribute("aria-hidden");
+      scene.removeAttribute("inert");
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      activateScene(steps.indexOf(entry.target));
+    });
+  }, { rootMargin: "-48% 0px -48%", threshold: 0 });
+
+  steps.forEach((step) => observer.observe(step));
+};
+
+const initProjectScroll = () => {
+  const section = document.querySelector("[data-work-scroll]");
+  const panels = Array.from(document.querySelectorAll("[data-project-panel]"));
+  const navigation = Array.from(document.querySelectorAll("[data-project-jump]"));
+  if (!section || !panels.length) return;
+
+  const visuals = panels.map((panel) => panel.querySelector(".project-visual"));
+  const copies = panels.map((panel) => panel.querySelector(".project-copy"));
+  let rafId = 0;
+  let lastActive = -1;
+  let isVisible = false;
+
+  const setActive = (activeIndex) => {
+    if (activeIndex === lastActive) return;
+    lastActive = activeIndex;
+    panels.forEach((panel, index) => {
+      const isActive = index === activeIndex;
+      panel.classList.toggle("is-active", isActive);
+      panel.toggleAttribute("inert", !isActive);
+      panel.setAttribute("aria-hidden", String(!isActive));
+    });
+    navigation.forEach((button, index) => {
+      const isActive = index === activeIndex;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-current", isActive ? "true" : "false");
+    });
+  };
+
+  const render = () => {
+    if (prefersReducedMotion.matches) {
+      section.classList.add("is-static");
+      lastActive = -1;
+      panels.forEach((panel) => {
+        panel.classList.add("is-active");
+        panel.removeAttribute("inert");
+        panel.removeAttribute("aria-hidden");
+      });
+      visuals.forEach((visual) => {
+        visual?.style.removeProperty("opacity");
+        visual?.style.removeProperty("transform");
+        visual?.style.removeProperty("z-index");
+      });
+      copies.forEach((copy) => {
+        copy?.style.removeProperty("opacity");
+        copy?.style.removeProperty("transform");
+      });
       return;
     }
 
-    closeMenu();
-  });
+    section.classList.remove("is-static");
+    const rect = section.getBoundingClientRect();
+    const distance = Math.max(section.offsetHeight - window.innerHeight, 1);
+    const progress = clamp(-rect.top / distance);
+    const rawIndex = progress * (panels.length - 1);
+    const activeIndex = Math.round(rawIndex);
+    const isMobile = mobileQuery.matches;
 
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      if (document.body.classList.contains("nav-open")) {
-        closeMenu();
+    panels.forEach((panel, index) => {
+      const offset = index - rawIndex;
+      const absoluteOffset = Math.abs(offset);
+      const orbitOffset = Math.max(-2.2, Math.min(2.2, offset));
+      const angle = orbitOffset * 0.82;
+      const cosine = Math.cos(angle);
+      const x = (1 - cosine) * (isMobile ? 28 : 48);
+      const y = Math.sin(angle) * (isMobile ? 34 : 52);
+      const z = (cosine - 1) * (isMobile ? 520 : 880);
+      const scale = (isMobile ? 0.56 : 0.5) + Math.max(0, cosine) * (isMobile ? 0.44 : 0.5);
+      const opacity = clamp(1 - Math.max(0, absoluteOffset - (isMobile ? 0.12 : 0.18)) * (isMobile ? 0.72 : 0.46));
+      const rotateY = orbitOffset * (isMobile ? -5 : -7);
+      const copyOpacity = clamp(1 - absoluteOffset * 1.9);
+      const copyShift = offset * 30;
+      const visual = visuals[index];
+      const copy = copies[index];
+
+      if (visual) {
+        visual.style.opacity = opacity.toFixed(3);
+        visual.style.transform = `translate3d(${x.toFixed(1)}%, calc(-50% + ${y.toFixed(1)}vh), ${z.toFixed(1)}px) rotateX(2deg) rotateY(${rotateY.toFixed(2)}deg) scale(${scale.toFixed(3)})`;
+        visual.style.zIndex = String(100 - Math.round(absoluteOffset * 10));
       }
+      if (copy) {
+        copy.style.opacity = copyOpacity.toFixed(3);
+        copy.style.transform = `translate3d(0, ${copyShift.toFixed(1)}px, 0)`;
+      }
+    });
+
+    setActive(activeIndex);
+  };
+
+  const animationFrame = () => {
+    render();
+    rafId = isVisible ? requestAnimationFrame(animationFrame) : 0;
+  };
+
+  const handleResize = () => {
+    render();
+    if (isVisible && !rafId) rafId = requestAnimationFrame(animationFrame);
+  };
+
+  navigation.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      const distance = section.offsetHeight - window.innerHeight;
+      const top = window.scrollY + section.getBoundingClientRect().top;
+      window.scrollTo({ top: top + distance * (index / (panels.length - 1)), behavior: prefersReducedMotion.matches ? "auto" : "smooth" });
     });
   });
 
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && document.body.classList.contains("nav-open")) {
-      closeMenu();
-      toggle.focus();
-    }
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 1024 && document.body.classList.contains("nav-open")) {
-      closeMenu();
-    }
-    if (isMobile()) {
-      navWrapper.setAttribute("aria-hidden", document.body.classList.contains("nav-open") ? "false" : "true");
-    } else {
-      navWrapper.removeAttribute("aria-hidden");
-    }
-  });
-
-  if (isMobile()) {
-    navWrapper.setAttribute("aria-hidden", "true");
-  } else {
-    navWrapper.removeAttribute("aria-hidden");
+  if (!prefersReducedMotion.matches && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      isVisible = entries.some((entry) => entry.isIntersecting);
+      if (isVisible && !rafId) rafId = requestAnimationFrame(animationFrame);
+    }, { rootMargin: "20% 0px" });
+    observer.observe(section);
   }
+
+  window.addEventListener("resize", handleResize, { passive: true });
+  render();
+};
+
+const initReveals = () => {
+  const elements = document.querySelectorAll("[data-reveal]");
+  if (!elements.length) return;
+
+  if (prefersReducedMotion.matches || !("IntersectionObserver" in window)) {
+    elements.forEach((element) => element.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.14, rootMargin: "0px 0px -6%" });
+
+  elements.forEach((element, index) => {
+    element.style.transitionDelay = `${Math.min(index % 3, 2) * 80}ms`;
+    observer.observe(element);
+  });
 };
 
 const initContactForm = () => {
   const form = document.getElementById("contact-form");
-  const submitBtn = document.getElementById("submit-btn");
-  const modal = document.getElementById("success-modal");
-  const modalTitle = document.getElementById("modal-title");
-  const modalMessage = document.getElementById("modal-message");
-  const modalCloseBtn = document.getElementById("modal-close-btn");
-  const modalIcon = modal?.querySelector(".modal-icon");
-  
-  if (!form || !submitBtn || !modal) return;
+  const button = document.getElementById("submit-button");
+  const label = form?.querySelector("[data-submit-label]");
+  const status = document.getElementById("form-status");
+  if (!form || !button || !label || !status) return;
 
-  const getCurrentLang = () => {
-    const activeBtn = document.querySelector(".lang-button.is-active");
-    return activeBtn ? activeBtn.dataset.lang : "en";
-  };
-
-  const getFormTranslation = (key) => {
-    const lang = getCurrentLang();
-    return translations[lang]?.contact?.form?.[key] || translations.en.contact.form[key];
-  };
-
-  const showModal = (isSuccess) => {
-    if (isSuccess) {
-      modalTitle.textContent = getFormTranslation("successTitle");
-      modalMessage.textContent = getFormTranslation("successMessage");
-      modalIcon.className = "modal-icon success";
-      modalIcon.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke-linecap="round" stroke-linejoin="round"/>
-        <polyline points="22 4 12 14.01 9 11.01" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>`;
-    } else {
-      modalTitle.textContent = getFormTranslation("errorTitle");
-      modalMessage.textContent = getFormTranslation("errorMessage");
-      modalIcon.className = "modal-icon error";
-      modalIcon.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/>
-        <line x1="15" y1="9" x2="9" y2="15" stroke-linecap="round" stroke-linejoin="round"/>
-        <line x1="9" y1="9" x2="15" y2="15" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>`;
-    }
-    modalCloseBtn.textContent = getFormTranslation("closeBtn");
-    modal.style.display = "flex";
-    // Small delay to trigger CSS transition
-    requestAnimationFrame(() => {
-      modal.classList.add("is-active");
-    });
-    document.body.style.overflow = "hidden";
-  };
-
-  const hideModal = () => {
-    modal.classList.remove("is-active");
-    document.body.style.overflow = "";
-    // Hide completely after transition
-    setTimeout(() => {
-      if (!modal.classList.contains("is-active")) {
-        modal.style.display = "none";
-      }
-    }, 400);
-  };
-
-  // Close modal events
-  modalCloseBtn?.addEventListener("click", hideModal);
-  modal?.addEventListener("click", (e) => {
-    if (e.target === modal) hideModal();
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.classList.contains("is-active")) {
-      hideModal();
-    }
-  });
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    
-    const submitText = submitBtn.querySelector("span[data-i18n]");
-    const spinner = submitBtn.querySelector(".spinner");
-    
-    // Show loading state
-    submitBtn.disabled = true;
-    if (submitText) submitText.textContent = getFormTranslation("sending");
-    if (spinner) spinner.style.display = "inline-block";
-
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    button.disabled = true;
+    button.classList.add("is-sending");
+    label.textContent = getTranslation("contact.sending");
+    status.textContent = "";
+    status.classList.remove("is-error");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-        },
-        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
       });
-
       const result = await response.json();
-
-      if (result.success) {
-        showModal(true);
-        form.reset();
-      } else {
-        throw new Error(result.message || "Form submission failed");
-      }
+      if (!response.ok || !result.success) throw new Error(result.message || "Submission failed");
+      form.reset();
+      status.textContent = getTranslation("contact.success");
     } catch (error) {
-      console.error("Form error:", error);
-      showModal(false);
+      console.error("Contact form error:", error);
+      status.textContent = getTranslation("contact.error");
+      status.classList.add("is-error");
     } finally {
-      // Reset button state
-      submitBtn.disabled = false;
-      if (submitText) submitText.textContent = getFormTranslation("send");
-      if (spinner) spinner.style.display = "none";
+      button.disabled = false;
+      button.classList.remove("is-sending");
+      label.textContent = getTranslation("contact.send");
     }
   });
 };
 
 const init = () => {
-  const lowPowerDevice = isLowPowerDevice();
-  document.body.classList.toggle("low-power", lowPowerDevice);
-  document.documentElement.classList.toggle("low-power", lowPowerDevice);
-  initLanguageSwitcher();
-  initNavigationToggle();
-  initRevealObserver();
+  initLanguage();
+  initHeader();
+  initStarfield();
+  initPointerParallax();
+  initScrollCinema();
+  initMissionScroll();
+  initProjectScroll();
+  initReveals();
   initContactForm();
-  initLazyPortfolioFrames();
-  const backgroundVideo = initBackgroundVideo();
-  const constellation = initConstellation();
-
-  const motionPreference = getMediaQuery("(prefers-reduced-motion: reduce)");
-  const applyMotionPreference = (matches) => {
-    document.body.classList.toggle("reduced-motion", !!matches);
-    document.documentElement.classList.toggle("reduced-motion", !!matches);
-    backgroundVideo?.setReducedMotion(!!matches);
-    constellation?.setReducedMotion(!!matches);
-  };
-
-  applyMotionPreference(motionPreference ? motionPreference.matches : false);
-  subscribeToMediaQuery(motionPreference, (event) => applyMotionPreference(event.matches));
+  document.querySelectorAll("[data-year]").forEach((element) => {
+    element.textContent = new Date().getFullYear();
+  });
+  requestAnimationFrame(() => document.body.classList.remove("is-loading"));
 };
 
 document.addEventListener("DOMContentLoaded", init);

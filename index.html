@@ -1,518 +1,363 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Space Code Studio — Modern Websites</title>
+    <meta
+      name="description"
+      content="Space Code Studio creates high-performance websites, digital products and AI-powered experiences from Switzerland."
+    />
+    <meta name="theme-color" content="#050606" />
+    <title>Space Code - Websites beyond ordinary</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/png" href="Media/favicon.png" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <div class="screen-boot" aria-hidden="true"></div>
-    <div class="video-background" aria-hidden="true">
-      <video
-        id="background-video"
-        class="background-video"
-        src="Media/bgfilm.mp4"
-        muted
-        playsinline
-        autoplay
-        preload="metadata"
-      ></video>
-    </div>
-    <canvas id="constellation"></canvas>
-    <div class="page">
-      <header class="site-header">
-        <a class="logo" href="#hero">
-          <span class="logo-main"><span>Space</span><span class="accent">Code</span></span>
-          <span class="logo-sub">by<br>jan</span>
-          
+  <body class="is-loading">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="page-noise" aria-hidden="true"></div>
+    <canvas id="starfield" aria-hidden="true"></canvas>
+
+    <header class="site-header" data-header>
+      <a class="brand brand--legacy brand--header" href="#hero" aria-label="Space Code - home">
+        <span class="legacy-logo-main"><span>Space</span><span class="legacy-logo-accent">Code</span></span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="header-panel" id="site-nav">
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#work" data-i18n="nav.work">Work</a>
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#about" data-i18n="nav.about">About</a>
+        </nav>
+        <div class="language-switch" aria-label="Language">
+          <button class="language-button is-active" type="button" data-lang="en">EN</button>
+          <span>/</span>
+          <button class="language-button" type="button" data-lang="de">DE</button>
+        </div>
+        <a class="header-cta" href="#contact">
+          <span data-i18n="nav.contact">Start a project</span>
+          <span aria-hidden="true">↗</span>
         </a>
-        <button
-          class="nav-toggle"
-          aria-expanded="false"
-          aria-controls="site-navigation"
-          aria-label="Toggle navigation"
-        >
-          <span class="nav-toggle-line"></span>
-          <span class="nav-toggle-line"></span>
-        </button>
-        <div class="nav-wrapper" id="site-navigation">
-          <nav class="nav">
-            <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
-            <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
-            <a href="#process" data-i18n="nav.process">Process</a>
-            <a href="#about" data-i18n="nav.about">About</a>
-            <a href="#contact" data-i18n="nav.contact">Contact</a>
-          </nav>
-          <div class="lang-switch">
-            <button class="lang-button is-active" data-lang="en">EN</button>
-            <button class="lang-button" data-lang="de">DE</button>
-          </div>
-        </div>
-      </header>
-
-      <main>
-        <section id="hero" class="hero section">
-          <div class="hero-content">
-            <p class="eyebrow" data-i18n="hero.eyebrow">
-              AI-native modern websites
-            </p>
-            <h1 data-i18n="hero.title">
-              Launch a breathtaking website faster than ever.
-            </h1>
-            <p class="lead" data-i18n="hero.lead">
-              Space Code Studio crafts ultra-modern web experiences that convert.
-              Collaborate with me for a polished one-off build or an ongoing AI
-              fueled iteration loop.
-            </p>
-            <div class="hero-cta">
-              <a class="button primary" href="#contact" data-i18n="hero.ctaPrimary">
-                Start your project
-              </a>
-              <a class="button ghost" href="#portfolio" data-i18n="hero.ctaSecondary">
-                View my work
-              </a>
-            </div>
-            <div class="pricing-pills">
-              <div class="pill" data-i18n="hero.offerOne">
-                Launch-ready site from 499 CHF
-              </div>
-              <div class="pill" data-i18n="hero.offerTwo">
-                Subscription from 59 CHF/month
-              </div>
-            </div>
-          </div>
-          <div class="hero-visual">
-            <div class="signal-stage" aria-label="Exciting websites is our thing">
-              <div class="signal-grid" aria-hidden="true"></div>
-              <div class="signal-line signal-line-one" aria-hidden="true"></div>
-              <div class="signal-line signal-line-two" aria-hidden="true"></div>
-              <div class="signal-line signal-line-three" aria-hidden="true"></div>
-              <div class="signal-frame signal-frame-one" aria-hidden="true"></div>
-              <div class="signal-frame signal-frame-two" aria-hidden="true"></div>
-              <div class="signal-frame signal-frame-three" aria-hidden="true"></div>
-              <div class="signal-core">
-                <span class="core-tag">Exciting websites</span>
-                <span class="core-tag">is our thing</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="portfolio" class="section portfolio">
-          <div class="section-header">
-            <p class="eyebrow" data-i18n="portfolio.eyebrow">Selected work</p>
-            <h2 data-i18n="portfolio.title">
-              Recent AI-assisted product launches.
-            </h2>
-          </div>
-          <div class="portfolio-grid">
-            <article class="portfolio-card portfolio-card-featured">
-              <div class="live-monitor live-monitor-wide">
-                <div class="monitor-frame">
-                  <div class="monitor-header">
-                    <span class="monitor-dot dot-red"></span>
-                    <span class="monitor-dot dot-yellow"></span>
-                    <span class="monitor-dot dot-green"></span>
-                    <span class="monitor-label">primelaneswiss.ch</span>
-                  </div>
-                  <div class="monitor-screen monitor-screen-wide">
-                    <iframe
-                      data-src="https://www.primelaneswiss.ch"
-                      title="Prime Lane Swiss live preview"
-                      loading="lazy"
-                      referrerpolicy="no-referrer-when-downgrade"
-                      sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals allow-pointer-lock"
-                    ></iframe>
-                  </div>
-                </div>
-                <div class="monitor-stand"></div>
-                <div class="monitor-base"></div>
-              </div>
-              <div class="card-content">
-                <span class="card-tag" data-i18n="portfolio.caseStudy">Case study</span>
-                <div class="card-title-row">
-                  <h3>Prime Lane Swiss</h3>
-                  <a class="inline-link" href="https://www.primelaneswiss.ch" target="_blank" rel="noreferrer">Open</a>
-                </div>
-                <p data-i18n="portfolio.primeLane">
-                  Premium Swiss transport service website with a polished brand presence and clear booking path.
-                </p>
-              </div>
-            </article>
-            <article class="portfolio-card">
-              <div class="live-monitor">
-                <div class="monitor-frame">
-                  <div class="monitor-header">
-                    <span class="monitor-dot dot-red"></span>
-                    <span class="monitor-dot dot-yellow"></span>
-                    <span class="monitor-dot dot-green"></span>
-                    <span class="monitor-label">lovana.app</span>
-                  </div>
-                  <div class="monitor-screen">
-                    <iframe
-                      data-src="https://velvety-lamington-146867.netlify.app/"
-                      title="Lovana.app live preview"
-                      loading="lazy"
-                      referrerpolicy="no-referrer-when-downgrade"
-                      sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals allow-pointer-lock"
-                    ></iframe>
-                  </div>
-                </div>
-                <div class="monitor-stand"></div>
-                <div class="monitor-base"></div>
-              </div>
-              <div class="card-content">
-                <span class="card-tag" data-i18n="portfolio.caseStudy">Case study</span>
-                <div class="card-title-row">
-                  <h3>Lovana.app</h3>
-                  <a class="inline-link" href="https://velvety-lamington-146867.netlify.app/" target="_blank" rel="noreferrer">Open</a>
-                </div>
-                <p data-i18n="portfolio.lovana">
-                  Dating assistant app driven by AI designed to improve your dating experiences. 
-                </p>
-              </div>
-            </article>
-            <article class="portfolio-card">
-              <div class="live-monitor">
-                <div class="monitor-frame">
-                  <div class="monitor-header">
-                    <span class="monitor-dot dot-red"></span>
-                    <span class="monitor-dot dot-yellow"></span>
-                    <span class="monitor-dot dot-green"></span>
-                    <span class="monitor-label">teamvote.io</span>
-                  </div>
-                  <div class="monitor-screen">
-                    <iframe
-                      data-src="https://simplevote-ten.vercel.app/"
-                      title="TeamVote.io live preview"
-                      loading="lazy"
-                      referrerpolicy="no-referrer-when-downgrade"
-                      sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals allow-pointer-lock"
-                    ></iframe>
-                  </div>
-                </div>
-                <div class="monitor-stand"></div>
-                <div class="monitor-base"></div>
-              </div>
-              <div class="card-content">
-                <span class="card-tag" data-i18n="portfolio.caseStudy">Case study</span>
-                <div class="card-title-row">
-                  <h3>TeamVote.io</h3>
-                  <a class="inline-link" href="https://simplevote-ten.vercel.app/" target="_blank" rel="noreferrer">Open</a>
-                </div>
-                <p data-i18n="portfolio.teamvote">
-                  Real-time decision platform for distributed teams featuring
-                  adaptive AI-driven insights.
-                </p>
-              </div>
-            </article>
-            <article class="portfolio-card">
-              <div class="live-monitor">
-                <div class="monitor-frame">
-                  <div class="monitor-header">
-                    <span class="monitor-dot dot-red"></span>
-                    <span class="monitor-dot dot-yellow"></span>
-                    <span class="monitor-dot dot-green"></span>
-                    <span class="monitor-label">traislate.ai</span>
-                  </div>
-                  <div class="monitor-screen">
-                    <iframe
-                      data-src="https://traislate.vercel.app/"
-                      title="Traislate.ai live preview"
-                      loading="lazy"
-                      referrerpolicy="no-referrer-when-downgrade"
-                      sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals allow-pointer-lock"
-                    ></iframe>
-                  </div>
-                </div>
-                <div class="monitor-stand"></div>
-                <div class="monitor-base"></div>
-              </div>
-              <div class="card-content">
-                <span class="card-tag" data-i18n="portfolio.caseStudy">Case study</span>
-                <div class="card-title-row">
-                  <h3>Traislate.ai</h3>
-                  <a class="inline-link" href="https://traislate.vercel.app/" target="_blank" rel="noreferrer">Open</a>
-                </div>
-                <p data-i18n="portfolio.traislate">
-                  Traislate.ai — Transcribe multilingual meetings and receive polished translations within seconds.
-                </p>
-              </div>
-            </article>
-            <article class="portfolio-card">
-              <div class="live-monitor">
-                <div class="monitor-frame">
-                  <div class="monitor-header">
-                    <span class="monitor-dot dot-red"></span>
-                    <span class="monitor-dot dot-yellow"></span>
-                    <span class="monitor-dot dot-green"></span>
-                    <span class="monitor-label">space-drive-rho.vercel.app</span>
-                  </div>
-                  <div class="monitor-screen">
-                    <iframe
-                      data-src="https://space-drive-rho.vercel.app/"
-                      title="Space Drive live preview"
-                      loading="lazy"
-                      referrerpolicy="no-referrer-when-downgrade"
-                      sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals allow-pointer-lock"
-                    ></iframe>
-                  </div>
-                </div>
-                <div class="monitor-stand"></div>
-                <div class="monitor-base"></div>
-              </div>
-              <div class="card-content">
-                <span class="card-tag" data-i18n="portfolio.caseStudy">Case study</span>
-                <div class="card-title-row">
-                  <h3>Space Drive</h3>
-                  <a class="inline-link" href="https://space-drive-rho.vercel.app/" target="_blank" rel="noreferrer">Open</a>
-                </div>
-                <p data-i18n="portfolio.spaceDrive">
-                  Space Drive — an immersive automotive website with a futuristic visual direction and fast browsing flow.
-                </p>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section id="services" class="section services">
-          <div class="section-header">
-            <p class="eyebrow" data-i18n="services.eyebrow">What we build</p>
-            <h2 data-i18n="services.title">
-              Future-ready web experiences tailored to your goals.
-            </h2>
-          </div>
-          <div class="services-grid">
-            <div class="service-card accent-1">
-              <div class="service-content">
-                <h3 data-i18n="services.items.0.title">Informational sites</h3>
-                <p data-i18n="services.items.0.copy">
-                  A beautifully designed home for your business with traffic analytics, lead forms, and fresh visual accents.
-                </p>
-              </div>
-            </div>
-            <div class="service-card accent-2">
-              <div class="service-content">
-                <h3 data-i18n="services.items.1.title">AI-powered experiences</h3>
-                <p data-i18n="services.items.1.copy">
-                  More complex sites that plug into the newest large language model APIs to deliver mind-blowing workflows.
-                </p>
-              </div>
-            </div>
-        
-            <div class="service-card accent-4">
-              <div class="service-content">
-                <h3 data-i18n="services.items.3.title">Integrations</h3>
-                <p data-i18n="services.items.3.copy">
-                  We implement any integration you need—from Stripe/PayPal payments to advanced databases that keep your site capable.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="pricing" class="section pricing">
-          <div class="section-header">
-            <p class="eyebrow" data-i18n="pricing.eyebrow">Transparent pricing</p>
-            <h2 data-i18n="pricing.title">
-              Choose a launch or a living, breathing product relationship.
-            </h2>
-          </div>
-          <div class="pricing-grid">
-            <div class="pricing-card">
-              <div class="pricing-badge" data-i18n="pricing.projectBadge">
-                Project Launch
-              </div>
-              <h3 data-i18n="pricing.projectTitle">One-time build</h3>
-              <p class="price" data-i18n="pricing.projectPrice">
-                499 CHF · fixed
-              </p>
-              <ul class="feature-list">
-                <li data-i18n="pricing.projectFeatures.0">
-                  Tailored concept, UX, and UI crafted with AI co-pilots
-                </li>
-                <li data-i18n="pricing.projectFeatures.1">
-                  Responsive, high-performing site ready to deploy within days
-                </li>
-                <li data-i18n="pricing.projectFeatures.2">
-                  Analytics, SEO foundation, and accessibility baked in
-                </li>
-              </ul>
-              <a class="button primary" href="#contact" data-i18n="pricing.projectCTA">
-                Reserve your slot
-              </a>
-            </div>
-            <div class="pricing-card highlighted">
-              <div class="pricing-badge" data-i18n="pricing.subscriptionBadge">
-                Continuous Evolution
-              </div>
-              <h3 data-i18n="pricing.subscriptionTitle">Subscription</h3>
-              <p class="price" data-i18n="pricing.subscriptionPrice">
-                59 CHF · monthly
-              </p>
-              <ul class="feature-list">
-                <li data-i18n="pricing.subscriptionFeatures.0">
-                  Unlimited iterative updates and experiments
-                </li>
-                <li data-i18n="pricing.subscriptionFeatures.1">
-                  When website needs an constant updates and improvements, we are here for you.
-                </li>
-                <li data-i18n="pricing.subscriptionFeatures.2">
-                  Priority support, hosting guidance, and performance checks
-                </li>
-              </ul>
-              <a class="button ghost" href="#contact" data-i18n="pricing.subscriptionCTA">
-                Join the waitlist
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <section id="process" class="section process">
-          <div class="section-header">
-            <p class="eyebrow" data-i18n="process.eyebrow">How it works</p>
-            <h2 data-i18n="process.title">From spark to shipping in three moves.</h2>
-          </div>
-          <div class="timeline">
-            <div class="step-card" data-step="01">
-              <h3 data-i18n="process.steps.0.title">Discovery + Preview</h3>
-              <p data-i18n="process.steps.0.copy">
-                Share your goals and aesthetic. Receive a complimentary AI-backed
-                concept preview so you can feel the direction before committing.
-              </p>
-            </div>
-            <div class="step-card" data-step="02">
-              <h3 data-i18n="process.steps.1.title">Design + Build</h3>
-              <p data-i18n="process.steps.1.copy">
-                I orchestrate design systems, motion, and code in a modular
-                stack ready for launch. Expect updates within fast iterations.
-              </p>
-            </div>
-            <div class="step-card" data-step="03">
-              <h3 data-i18n="process.steps.2.title">Launch + Iterate</h3>
-              <p data-i18n="process.steps.2.copy">
-                Deploy with confidence and keep evolving. AI insights drive
-                improvements, and I stay on to iterate or hand over seamlessly.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section id="about" class="section about">
-          <div class="grid">
-            <div class="about-copy">
-              <p class="eyebrow" data-i18n="about.eyebrow">About me</p>
-              <h2 data-i18n="about.title">
-                Jan — crafting human experiences with precision.
-              </h2>
-              <p data-i18n="about.copy.0">
-                Jan'sites blends
-                state-of-the-art automation with meticulous human taste to ship
-                products that feel both futuristic and unmistakably personal.
-              </p>
-              <p data-i18n="about.copy.1">
-                I partner with founders, agencies, and teams that want to move
-                fast without sacrificing craft. Let’s co-create something that
-                feels alive.
-              </p>
-            </div>
-            <div class="about-stats">
-              <div class="stat-card">
-                <span class="stat-label" data-i18n="about.stats.0.label">
-                  Projects shipped
-                </span>
-                <span class="stat-value" data-i18n="about.stats.0.value">
-                  20+
-                </span>
-              </div>
-              <div class="stat-card">
-                <span class="stat-label" data-i18n="about.stats.1.label">
-                  AI automations deployed
-                </span>
-                <span class="stat-value" data-i18n="about.stats.1.value">
-                  70+
-                </span>
-              </div>
-              <div class="stat-card">
-                <span class="stat-label" data-i18n="about.stats.2.label">
-                  Avg. turnaround
-                </span>
-                <span class="stat-value" data-i18n="about.stats.2.value">
-                  7 days
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="contact" class="section contact">
-          <div class="contact-card">
-            <p class="eyebrow" data-i18n="contact.eyebrow">Let’s build</p>
-            <h2 data-i18n="contact.title">
-              Ready for a site that feels alive from the first scroll?
-            </h2>
-            <p data-i18n="contact.copy">
-              Send a message with your idea, target audience, and timeline. I’ll
-              respond within 24 hours with the free preview concept and next
-              steps.
-            </p>
-            <form id="contact-form" class="contact-form">
-              <input type="hidden" name="access_key" value="e4013243-bccf-4b78-b550-fc3474638f96">
-              <input type="hidden" name="subject" value="New Contact from Space Code Studio">
-              <input type="hidden" name="from_name" value="Space Code Studio Contact Form">
-              <div class="form-group">
-                <label for="name" data-i18n="contact.form.name">Name</label>
-                <input type="text" id="name" name="name" required placeholder="Your name">
-              </div>
-              <div class="form-group">
-                <label for="email" data-i18n="contact.form.email">Email</label>
-                <input type="email" id="email" name="email" required placeholder="your@email.com">
-              </div>
-              <div class="form-group">
-                <label for="message" data-i18n="contact.form.message">Message</label>
-                <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
-              </div>
-              <button type="submit" class="button primary" id="submit-btn">
-                <span data-i18n="contact.form.send">Send message</span>
-                <span class="spinner" style="display: none;"></span>
-              </button>
-            </form>
-          </div>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <p data-i18n="footer.copy">
-          © Space Code Studio by Jan. Built with passion and AI.
-        </p>
-        <div class="footer-links">
-          <a href="#hero" data-i18n="footer.backToTop">Back to top</a>
-        </div>
-      </footer>
-    </div>
-
-    <!-- Success Modal -->
-    <div class="modal-overlay" id="success-modal" style="display: none;">
-      <div class="modal-content">
-        <div class="modal-icon success">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke-linecap="round" stroke-linejoin="round"/>
-            <polyline points="22 4 12 14.01 9 11.01" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h3 id="modal-title">Message sent!</h3>
-        <p id="modal-message">Thank you for reaching out. I'll get back to you within 24 hours with ideas for your project.</p>
-        <button class="button primary modal-close" id="modal-close-btn">Got it</button>
       </div>
-    </div>
+    </header>
+
+    <main id="main">
+      <section id="hero" class="scroll-cinema" data-scroll-cinema aria-label="Introduction">
+        <div class="cinema-sticky">
+          <div class="cinema-media" aria-hidden="true">
+            <video
+              id="hero-film"
+              muted
+              playsinline
+              preload="auto"
+              tabindex="-1"
+            >
+              <source src="Media/spacecode-scroll-mobile.mp4" type="video/mp4" media="(max-width: 620px)" />
+              <source src="Media/spacecode-scroll-desktop-1080p.mp4" type="video/mp4" />
+            </video>
+            <div class="cinema-vignette"></div>
+          </div>
+
+          <div class="cinema-beats">
+            <div class="hero-beat hero-beat--welcome" data-hero-beat data-beat-at="0">
+              <p class="hero-welcome" data-i18n="hero.welcome">Welcome to the new era of creating websites.</p>
+            </div>
+
+            <div class="hero-beat hero-beat--reveal" data-hero-beat data-beat-at="0.9">
+              <p class="kicker" data-i18n="hero.kicker">Independent digital studio · Switzerland</p>
+              <h1>
+                <span data-i18n="hero.titleOne">Space</span>
+                <span data-i18n="hero.titleTwo">Code</span>
+              </h1>
+              <p class="hero-intro" data-i18n="hero.intro">Websites that feel alive.</p>
+              <a class="text-link" href="#work">
+                <span data-i18n="hero.explore">Explore selected work</span>
+                <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="scroll-instrument" aria-hidden="true">
+            <span class="scroll-label">SCROLL TO TRAVEL</span>
+            <span class="scroll-track"><span data-cinema-progress></span></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="manifesto section-shell" data-mission-scroll>
+        <div class="manifesto-sticky">
+          <p class="manifesto-label" data-i18n="manifesto.label">The mission</p>
+          <div class="manifesto-stage">
+            <p class="manifesto-scene manifesto-lead is-active" data-mission-scene data-i18n="manifesto.titleOne">
+              The internet has enough templates.
+            </p>
+            <p class="manifesto-scene manifesto-lead" data-mission-scene data-i18n="manifesto.titleTwo" aria-hidden="true" inert>
+              We Create memorable places.
+            </p>
+            <div class="manifesto-scene manifesto-aside" data-mission-scene aria-hidden="true" inert>
+              <p data-i18n="manifesto.copy">
+                Space Code combines human taste with AI-speed production to turn sharp ideas into fast, expressive websites.
+              </p>
+              <a class="text-link" href="#contact">
+                <span data-i18n="manifesto.link">Tell us what you are building</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mission-scroll-steps" aria-hidden="true">
+          <span data-mission-step></span>
+          <span data-mission-step></span>
+          <span data-mission-step></span>
+        </div>
+      </section>
+
+      <section id="work" class="work-scroll" data-work-scroll>
+        <div class="work-sticky">
+          <div class="work-heading">
+            <p class="work-label" data-i18n="work.label">Selected orbit</p>
+            <h2 data-i18n="work.title">Last few launches.<br /></h2>
+          </div>
+
+          <div class="project-stage" aria-live="polite">
+            <article class="project-panel is-active" data-project-panel>
+              <div class="project-copy">
+                <h3>Prime Lane<br />Swiss</h3>
+                <p data-i18n="work.prime">
+                  A premium booking experience for a Swiss transport service, shaped around trust and frictionless conversion.
+                </p>
+                <a class="project-link" href="https://www.primelaneswiss.ch" target="_blank" rel="noreferrer">
+                  <span data-i18n="work.open">Visit live site</span><span>↗</span>
+                </a>
+              </div>
+              <figure class="project-visual">
+                <img src="Media/portfolio /primelane.png" alt="Prime Lane Swiss website homepage" loading="lazy" decoding="async" />
+              </figure>
+            </article>
+
+            <article class="project-panel" data-project-panel>
+              <div class="project-copy">
+                <h3>Lovana<span class="title-dot">.</span>app</h3>
+                <p data-i18n="work.lovana">
+                  An AI dating companion with a warm, playful identity and a product story that makes complex technology feel human.
+                </p>
+                <a class="project-link" href="https://velvety-lamington-146867.netlify.app/" target="_blank" rel="noreferrer">
+                  <span data-i18n="work.open">Visit live site</span><span>↗</span>
+                </a>
+              </div>
+              <figure class="project-visual">
+                <img src="Media/portfolio /lovana.png" alt="Lovana app website homepage" loading="lazy" decoding="async" />
+              </figure>
+            </article>
+
+            <article class="project-panel" data-project-panel>
+              <div class="project-copy">
+                <h3>TeamVote<span class="title-dot">.</span>io</h3>
+                <p data-i18n="work.teamvote">
+                  A real-time decision platform that turns distributed opinions into clear, shared momentum.
+                </p>
+                <a class="project-link" href="https://simplevote-ten.vercel.app/" target="_blank" rel="noreferrer">
+                  <span data-i18n="work.open">Visit live site</span><span>↗</span>
+                </a>
+              </div>
+              <figure class="project-visual">
+                <img src="Media/portfolio /teamvote.png" alt="TeamVote website homepage" loading="lazy" decoding="async" />
+              </figure>
+            </article>
+
+            <article class="project-panel" data-project-panel>
+              <div class="project-copy">
+                <h3>Traislate<span class="title-dot">.</span>ai</h3>
+                <p data-i18n="work.traislate">
+                  Multilingual meetings become polished transcripts and translations within seconds, not hours.
+                </p>
+                <a class="project-link" href="https://traislate.vercel.app/" target="_blank" rel="noreferrer">
+                  <span data-i18n="work.open">Visit live site</span><span>↗</span>
+                </a>
+              </div>
+              <figure class="project-visual">
+                <img src="Media/portfolio /traislate.png" alt="Traislate AI website homepage" loading="lazy" decoding="async" />
+              </figure>
+            </article>
+
+            <article class="project-panel" data-project-panel>
+              <div class="project-copy">
+                <h3>Space<br />Drive</h3>
+                <p data-i18n="work.drive">
+                  A cinematic automotive concept that turns product discovery into a futuristic, high-speed experience.
+                </p>
+                <a class="project-link" href="https://space-drive-rho.vercel.app/" target="_blank" rel="noreferrer">
+                  <span data-i18n="work.open">Visit live site</span><span>↗</span>
+                </a>
+              </div>
+              <figure class="project-visual">
+                <img src="Media/portfolio /spacedrive.png" alt="Space Drive website homepage" loading="lazy" decoding="async" />
+              </figure>
+            </article>
+          </div>
+
+          <div class="project-navigation" aria-label="Project navigation">
+            <button type="button" class="is-active" data-project-jump="0"><span>Prime Lane</span><i></i></button>
+            <button type="button" data-project-jump="1"><span>Lovana</span><i></i></button>
+            <button type="button" data-project-jump="2"><span>TeamVote</span><i></i></button>
+            <button type="button" data-project-jump="3"><span>Traislate</span><i></i></button>
+            <button type="button" data-project-jump="4"><span>Space Drive</span><i></i></button>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="services section-shell">
+        <div class="section-index" data-reveal>
+          <span>02</span>
+          <span data-i18n="services.label">Capabilities</span>
+        </div>
+        <div class="services-heading" data-reveal>
+          <p class="kicker" data-i18n="services.kicker">One studio. Full trajectory.</p>
+          <h2 data-i18n="services.title">From first signal<br />to final launch.</h2>
+        </div>
+        <div class="service-list">
+          <article class="service-row" data-reveal>
+            <span class="service-number">01</span>
+            <h3 data-i18n="services.strategyTitle">Strategy & direction</h3>
+            <p data-i18n="services.strategyCopy">Positioning, content architecture and an unmistakable visual route before a line of code is written.</p>
+            <span class="service-icon" aria-hidden="true">↗</span>
+          </article>
+          <article class="service-row" data-reveal>
+            <span class="service-number">02</span>
+            <h3 data-i18n="services.designTitle">Digital design & motion</h3>
+            <p data-i18n="services.designCopy">Responsive interfaces, art direction and purposeful 3D motion made to hold attention.</p>
+            <span class="service-icon" aria-hidden="true">↗</span>
+          </article>
+          <article class="service-row" data-reveal>
+            <span class="service-number">03</span>
+            <h3 data-i18n="services.buildTitle">Creative development</h3>
+            <p data-i18n="services.buildCopy">Fast, accessible frontend builds, integrations, e-commerce and AI-native product experiences.</p>
+            <span class="service-icon" aria-hidden="true">↗</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="about-section section-shell">
+        <div class="section-index" data-reveal>
+          <span>03</span>
+          <span data-i18n="about.label">The human in the loop</span>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy" data-reveal>
+            <p class="kicker" data-i18n="about.kicker">Small studio. Direct collaboration.</p>
+            <h2 data-i18n="about.title">Technology moves fast.<br />Taste still matters.</h2>
+            <p data-i18n="about.copy">
+              I am Jan, designer, developer and the person answering your message. I use modern AI as an accelerator, never as a substitute for judgment, clarity and craft.
+            </p>
+            <div class="about-stats">
+              <div><strong>20+</strong><span data-i18n="about.projects">projects shipped</span></div>
+              <div><strong>7d</strong><span data-i18n="about.turnaround">average first launch</span></div>
+              <div><strong>1:1</strong><span data-i18n="about.contact">direct collaboration</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="pricing-section section-shell">
+        <div class="section-index" data-reveal>
+          <span>04</span>
+          <span data-i18n="pricing.label">Choose your orbit</span>
+        </div>
+        <div class="pricing-heading" data-reveal>
+          <h2 data-i18n="pricing.title">Start focused.<br />Evolve continuously.</h2>
+          <p data-i18n="pricing.copy">Transparent starting points. The final scope is shaped around the result you need.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card" data-reveal>
+            <div class="price-card__top">
+              <span>01 / LAUNCH</span>
+              <span class="status-dot"></span>
+            </div>
+            <h3 data-i18n="pricing.launchTitle">One-time build</h3>
+            <p class="price"><small data-i18n="pricing.from">from</small> 499 <span>CHF</span></p>
+            <ul>
+              <li data-i18n="pricing.launchOne">Concept, UX and visual direction</li>
+              <li data-i18n="pricing.launchTwo">Responsive, high-performance build</li>
+              <li data-i18n="pricing.launchThree">SEO, analytics and launch support</li>
+            </ul>
+            <a class="button button--dark" href="#contact"><span data-i18n="pricing.launchCta">Reserve a launch</span><span>↗</span></a>
+          </article>
+          <article class="price-card price-card--dark" data-reveal>
+            <div class="price-card__top">
+              <span>02 / EVOLVE</span>
+              <span class="status-dot"></span>
+            </div>
+            <h3 data-i18n="pricing.evolveTitle">Continuous evolution</h3>
+            <p class="price"><small data-i18n="pricing.from">from</small> 59 <span>CHF / MO</span></p>
+            <ul>
+              <li data-i18n="pricing.evolveOne">Ongoing updates and experiments</li>
+              <li data-i18n="pricing.evolveTwo">Priority support and improvements</li>
+              <li data-i18n="pricing.evolveThree">Performance checks and guidance</li>
+            </ul>
+            <a class="button button--light" href="#contact"><span data-i18n="pricing.evolveCta">Join the orbit</span><span>↗</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <div class="section-shell contact-inner">
+          <div class="contact-intro" data-reveal>
+            <p class="kicker" data-i18n="contact.kicker">Transmission open</p>
+            <h2><span data-i18n="contact.titleOne">Have an idea?</span><br /><em data-i18n="contact.titleTwo">Send the signal.</em></h2>
+            <p data-i18n="contact.copy">Tell me what you are building, for whom and when it needs to launch. I will reply within 24 hours.</p>
+            <a href="mailto:jan@spacecode.ch"></a>
+          </div>
+          <form id="contact-form" class="contact-form" data-reveal>
+            <input type="hidden" name="access_key" value="e4013243-bccf-4b78-b550-fc3474638f96" />
+            <input type="hidden" name="subject" value="New Contact from Space Code Studio" />
+            <input type="hidden" name="from_name" value="Space Code Studio Contact Form" />
+            <div class="field-row">
+              <label for="name"><span>01</span><b data-i18n="contact.name">Your name</b></label>
+              <input id="name" name="name" type="text" autocomplete="name" required placeholder="Jane Appleseed" />
+            </div>
+            <div class="field-row">
+              <label for="email"><span>02</span><b data-i18n="contact.email">Email address</b></label>
+              <input id="email" name="email" type="email" autocomplete="email" required placeholder="jane@company.com" />
+            </div>
+            <div class="field-row field-row--message">
+              <label for="message"><span>03</span><b data-i18n="contact.message">Project signal</b></label>
+              <textarea id="message" name="message" rows="4" required placeholder="A short brief, goal and timeline..."></textarea>
+            </div>
+            <button id="submit-button" class="button button--light submit-button" type="submit">
+              <span data-submit-label data-i18n="contact.send">Transmit message</span>
+              <span class="submit-arrow" aria-hidden="true">↗</span>
+            </button>
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand brand--legacy brand--footer" href="#hero" aria-label="Space Code by Jan - back to top">
+        <span class="legacy-logo-main"><span>Space</span><span class="legacy-logo-accent">Code</span></span>
+        <span class="legacy-logo-sub">by<br />jan</span>
+      </a>
+      <p>© <span data-year></span> SPACE CODE STUDIO</p>
+      <a href="#hero"><span data-i18n="footer.top">Back to top</span> ↑</a>
+    </footer>
 
     <script src="script.js"></script>
   </body>
