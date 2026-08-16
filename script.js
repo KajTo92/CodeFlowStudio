@@ -470,6 +470,7 @@ const initProjectScroll = () => {
 
   const visuals = panels.map((panel) => panel.querySelector(".project-visual"));
   const copies = panels.map((panel) => panel.querySelector(".project-copy"));
+  const projectVideos = panels.map((panel) => panel.querySelector("[data-project-video]"));
   let rafId = 0;
   let lastActive = -1;
   let isVisible = false;
@@ -482,6 +483,15 @@ const initProjectScroll = () => {
       panel.classList.toggle("is-active", isActive);
       panel.toggleAttribute("inert", !isActive);
       panel.setAttribute("aria-hidden", String(!isActive));
+      const projectVideo = projectVideos[index];
+      if (projectVideo) {
+        if (isActive && !prefersReducedMotion.matches) {
+          const playPromise = projectVideo.play();
+          if (playPromise && typeof playPromise.catch === "function") playPromise.catch(() => {});
+        } else {
+          projectVideo.pause();
+        }
+      }
     });
     navigation.forEach((button, index) => {
       const isActive = index === activeIndex;
