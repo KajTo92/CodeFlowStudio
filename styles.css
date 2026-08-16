@@ -636,7 +636,7 @@ body.loader-ready .page-loader {
   align-items: baseline;
   justify-content: center;
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(4.5rem, 13vw, 12rem);
+  font-size: clamp(4.5rem, 10vw, 9.25rem);
   font-weight: 600;
   line-height: 0.82;
   letter-spacing: 0.025em;
@@ -663,6 +663,22 @@ body.loader-ready .page-loader {
 
 .hero-beat--reveal .text-link {
   margin-top: 28px;
+}
+
+@media (min-width: 621px) {
+  .hero-beat--reveal .hero-intro {
+    position: relative;
+    left: 50%;
+    width: max-content;
+    margin-top: 42px;
+    margin-right: 0;
+    margin-left: 0;
+    transform: translateX(-50%);
+  }
+
+  .hero-beat--reveal .text-link {
+    margin-top: 36px;
+  }
 }
 
 .hero-beat h1 em {
