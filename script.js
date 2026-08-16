@@ -327,7 +327,7 @@ const initScrollCinema = () => {
   let rafId = 0;
   let duration = 0;
   let primed = false;
-  const finalHoldStart = 0.86;
+  const getFinalHoldStart = () => mobileQuery.matches ? 0.74 : 0.8;
 
   const updateTarget = () => {
     const rect = section.getBoundingClientRect();
@@ -365,6 +365,7 @@ const initScrollCinema = () => {
     });
 
     if (duration > 0 && !prefersReducedMotion.matches) {
+      const finalHoldStart = getFinalHoldStart();
       const videoProgress = clamp(progress / finalHoldStart);
       const targetTime = videoProgress * Math.max(duration - 0.05, 0);
       const filmOpacity = 0.4 + clamp(targetTime) * 0.6;
@@ -512,7 +513,7 @@ const initProjectScroll = () => {
     const distance = Math.max(section.offsetHeight - window.innerHeight, 1);
     const sectionProgress = clamp(-rect.top / distance);
     const isMobile = mobileQuery.matches;
-    const leadHold = isMobile ? 0.08 : 0.06;
+    const leadHold = isMobile ? 0.12 : 0.09;
     const progress = clamp((sectionProgress - leadHold) / (1 - leadHold));
     const rawIndex = progress * (panels.length - 1);
     const activeIndex = Math.round(rawIndex);
@@ -562,7 +563,7 @@ const initProjectScroll = () => {
     button.addEventListener("click", () => {
       const distance = section.offsetHeight - window.innerHeight;
       const top = window.scrollY + section.getBoundingClientRect().top;
-      const leadHold = mobileQuery.matches ? 0.08 : 0.06;
+      const leadHold = mobileQuery.matches ? 0.12 : 0.09;
       const panelProgress = index / (panels.length - 1);
       const sectionProgress = index === 0 ? 0 : leadHold + (1 - leadHold) * panelProgress;
       window.scrollTo({ top: top + distance * sectionProgress, behavior: prefersReducedMotion.matches ? "auto" : "smooth" });
