@@ -510,10 +510,12 @@ const initProjectScroll = () => {
     section.classList.remove("is-static");
     const rect = section.getBoundingClientRect();
     const distance = Math.max(section.offsetHeight - window.innerHeight, 1);
-    const progress = clamp(-rect.top / distance);
+    const sectionProgress = clamp(-rect.top / distance);
+    const isMobile = mobileQuery.matches;
+    const leadHold = isMobile ? 0.18 : 0.12;
+    const progress = clamp((sectionProgress - leadHold) / (1 - leadHold));
     const rawIndex = progress * (panels.length - 1);
     const activeIndex = Math.round(rawIndex);
-    const isMobile = mobileQuery.matches;
 
     panels.forEach((panel, index) => {
       const offset = index - rawIndex;
@@ -560,7 +562,10 @@ const initProjectScroll = () => {
     button.addEventListener("click", () => {
       const distance = section.offsetHeight - window.innerHeight;
       const top = window.scrollY + section.getBoundingClientRect().top;
-      window.scrollTo({ top: top + distance * (index / (panels.length - 1)), behavior: prefersReducedMotion.matches ? "auto" : "smooth" });
+      const leadHold = mobileQuery.matches ? 0.18 : 0.12;
+      const panelProgress = index / (panels.length - 1);
+      const sectionProgress = index === 0 ? 0 : leadHold + (1 - leadHold) * panelProgress;
+      window.scrollTo({ top: top + distance * sectionProgress, behavior: prefersReducedMotion.matches ? "auto" : "smooth" });
     });
   });
 
