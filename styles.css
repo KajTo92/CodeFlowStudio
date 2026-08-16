@@ -1951,12 +1951,18 @@ body:not(.is-loading) .scroll-instrument {
 }
 
 @media (max-width: 620px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+
   .legacy-logo-main {
     font-size: 18px;
   }
 
   .scroll-cinema {
     height: 470svh;
+    scroll-snap-align: end;
+    scroll-snap-stop: always;
   }
 
   .cinema-sticky {
@@ -2176,6 +2182,7 @@ body:not(.is-loading) .scroll-instrument {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+    scroll-snap-type: none;
   }
 
   *,
