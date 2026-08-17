@@ -358,9 +358,7 @@ const initPageLoader = () => {
     return;
   }
 
-  const source = window.matchMedia("(max-width: 620px)").matches
-    ? video.dataset.mobileSrc
-    : video.dataset.desktopSrc;
+  const source = video.dataset.src;
 
   if (!source) {
     finish();
